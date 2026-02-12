@@ -14,9 +14,9 @@
   "camera_speed": 1,
 
   "preload": {
-    "images/stageback": 3,
-    "images/stagefront": 3,
-    "images/stagecurtains": 2,
-    "images/stage_light": 2
+    "images/stages/week1/stageback": 3,
+    "images/stages/week1/stagefront": 3,
+    "images/stages/week1/stagecurtains": 2,
+    "images/stages/week1/stage_light": 2
   }
 }
