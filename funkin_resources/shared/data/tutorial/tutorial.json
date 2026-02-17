@@ -464,7 +464,28 @@
 		],
 		"player2": "gf",
 		"gfVersion": "gf",
-		"events": [],
+		"events": [
+			[
+				18650,
+				[
+					[
+						"Hey!",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				28250,
+				[
+					[
+						"Hey!",
+						"2",
+						""
+					]
+				]
+			]
+		],
 		"song": "Tutorial",
 		"stage": "stage",
 		"needsVoices": true,

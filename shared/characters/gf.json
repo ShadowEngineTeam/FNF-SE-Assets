@@ -93,6 +93,7 @@
   "image": "characters/GF_assets",
   "position": [0, 0],
   "healthicon": "gf",
+  "vocals_file" : "gf",
   "flip_x": false,
   "healthbar_colors": [165, 0, 77],
   "camera_position": [0, 0],
