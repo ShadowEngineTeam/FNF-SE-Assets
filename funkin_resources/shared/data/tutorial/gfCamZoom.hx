@@ -9,6 +9,12 @@ function onCreate()
 		game.opponentCameraOffset = [-50, 0];
 }
 
+function onSongStart()
+{
+	if (isErect)
+		game.camZooming = true;
+}
+
 function opponentNoteHit(note:Note)
 {
 	if (isErect)
