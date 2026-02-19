@@ -1048,8 +1048,13 @@
 				[
 					[
 						"Zoom Camera",
-						"64",
+						"64,1.5",
 						"smoothStepIn"
+					],
+					[
+						"Focus Camera",
+						0,
+						"0,0,4,CLASSIC"
 					]
 				]
 			],
@@ -1058,14 +1063,9 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1",
 						"elasticOut"
-					]
-				]
-			],
-			[
-				8850,
-				[
+					],
 					[
 						"Hey!",
 						"",
@@ -1074,12 +1074,27 @@
 				]
 			],
 			[
+				9600,
+				[
+					[
+						"Focus Camera",
+						1,
+						"0,0,4,linear"
+					]
+				]
+			],
+			[
 				14400,
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1",
 						"elasticInOut"
+					],
+					[
+						"Focus Camera",
+						0,
+						"0,0,4,linear"
 					]
 				]
 			],
@@ -1098,8 +1113,13 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.3",
 						"elasticInOut"
+					],
+					[
+						"Focus Camera",
+						1,
+						"0,0,4,CLASSIC"
 					]
 				]
 			],
@@ -1108,8 +1128,13 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1",
 						"elasticInOut"
+					],
+					[
+						"Focus Camera",
+						0,
+						"0,0,4,CLASSIC"
 					]
 				]
 			],
@@ -1128,8 +1153,13 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.3",
 						"elasticInOut"
+					],
+					[
+						"Focus Camera",
+						1,
+						"0,0,4,CLASSIC"
 					]
 				]
 			],
@@ -1138,8 +1168,13 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1",
 						"elasticInOut"
+					],
+					[
+						"Focus Camera",
+						0,
+						"0,0,4,CLASSIC"
 					]
 				]
 			],
@@ -1148,8 +1183,13 @@
 				[
 					[
 						"Zoom Camera",
-						"16",
+						"16,0.9",
 						"expoOut"
+					],
+					[
+						"Focus Camera",
+						1,
+						"0,0,4,linear"
 					]
 				]
 			],
@@ -1158,8 +1198,13 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1",
 						"elasticInOut"
+					],
+					[
+						"Focus Camera",
+						0,
+						"0,0,4,CLASSIC"
 					]
 				]
 			],
@@ -1168,8 +1213,13 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.3",
 						"elasticInOut"
+					],
+					[
+						"Focus Camera",
+						1,
+						"0,0,4,CLASSIC"
 					]
 				]
 			],
@@ -1177,8 +1227,13 @@
 				50400,
 				[
 					[
+						"Focus Camera",
+						0,
+						"0,0,4,linear"
+					],
+					[
 						"Zoom Camera",
-						"4",
+						"4,1",
 						"elasticInOut"
 					]
 				]
@@ -1188,7 +1243,7 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.1",
 						"linear"
 					]
 				]
@@ -1198,7 +1253,7 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.2",
 						"linear"
 					]
 				]
@@ -1208,7 +1263,7 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.3",
 						"linear"
 					]
 				]
@@ -1218,7 +1273,7 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.35",
 						"INSTANT"
 					]
 				]
@@ -1228,7 +1283,7 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.4",
 						"INSTANT"
 					]
 				]
@@ -1238,7 +1293,7 @@
 				[
 					[
 						"Zoom Camera",
-						"4",
+						"4,1.5",
 						"linear"
 					]
 				]
@@ -1248,7 +1303,7 @@
 				[
 					[
 						"Zoom Camera",
-						"32",
+						"32,0.9",
 						"expoOut"
 					]
 				]
