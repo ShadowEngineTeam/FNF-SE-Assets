@@ -23,11 +23,11 @@
       "name": "Pico Death Stab"
     }
   ],
-  "vocals_file": "pico",
   "no_antialiasing": false,
   "image": "characters/Pico_Death",
   "position": [15, 335],
   "healthicon": "pico",
+  "vocals_file": "pico",
   "flip_x": true,
   "healthbar_colors": [183, 216, 85],
   "camera_position": [0, 0],
