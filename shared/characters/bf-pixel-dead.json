@@ -29,6 +29,7 @@
   "image": "characters/bfPixelsDEAD",
   "position": [0, 350],
   "healthicon": "bf-pixel",
+  "vocals_file" : "bf-pixel",
   "flip_x": true,
   "healthbar_colors": [123, 214, 246],
   "camera_position": [50, -60],
