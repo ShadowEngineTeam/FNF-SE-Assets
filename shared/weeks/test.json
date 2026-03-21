@@ -11,11 +11,11 @@
 	"weekBackground": "",
 
 	"storyName": "",
-	"weekBefore": "tutorial",
+	"weekBefore": "",
 	"weekName": "Test",
 	"difficulties": "Normal, Erect, Nightmare",
 	"startUnlocked": true,
 
-	"hideStoryMode": false,
+	"hideStoryMode": true,
 	"hideFreeplay": false
 }
