@@ -14,15 +14,17 @@
   "camera_speed": 1,
 
   "preload": {
-    "images/stages/week1/erect/backDark": 3,
-    "images/stages/week1/erect/crowd": 2,
-    "images/stages/week1/erect/brightLightSmall": 2,
-    "images/stages/week1/erect/bg": 3,
-    "images/stages/week1/erect/server": 3,
-    "images/stages/week1/erect/lightgreen": 2,
-    "images/stages/week1/erect/lightred": 2,
-    "images/stages/week1/erect/orangeLight": 2,
-    "images/stages/week1/erect/lights": 3,
-    "images/stages/week1/erect/lightAbove": 2
+    "images": [
+      "stages/week1/erect/backDark",
+      "stages/week1/erect/bg",
+      "stages/week1/erect/lights",
+      "stages/week1/erect/server",
+      "stages/week1/erect/brightLightSmall",
+      "stages/week1/erect/crowd",
+      "stages/week1/erect/lightAbove",
+      "stages/week1/erect/lightgreen",
+      "stages/week1/erect/lightred",
+      "stages/week1/erect/orangeLight"
+    ]
   }
 }
