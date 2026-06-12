@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="chart_quant.png">
-	<!-- Created with Adobe Animate version 21.0.5.40714 -->
-	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="chart_quant0000" x="1" y="1" width="26" height="20"/>
 	<SubTexture name="chart_quant0001" x="28" y="1" width="26" height="20"/>
 	<SubTexture name="chart_quant0002" x="55" y="1" width="26" height="20"/>
