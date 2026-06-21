@@ -14,13 +14,16 @@ function onSongStart()
 
 function opponentNoteHit(note:Note)
 {
-	if (game.isErect) return;
+	if (game.isErect)
+		return;
+
 	game.camZooming = false;
 }
 
 function onMoveCamera(focus:String)
 {
-	if (game.isErect) return;
+	if (game.isErect) 
+		return;
 
 	if (focus == 'boyfriend')
 	{
