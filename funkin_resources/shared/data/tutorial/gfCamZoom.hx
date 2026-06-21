@@ -22,7 +22,7 @@ function opponentNoteHit(note:Note)
 
 function onMoveCamera(focus:String)
 {
-	if (game.isErect) 
+	if (game.isErect)
 		return;
 
 	if (focus == 'boyfriend')
