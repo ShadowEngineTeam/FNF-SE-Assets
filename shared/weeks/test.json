@@ -13,7 +13,7 @@
 	"storyName": "",
 	"weekBefore": "",
 	"weekName": "Test",
-	"difficulties": "Normal, Erect, Nightmare",
+	"difficulties": ["normal", "erect", "nightmare"],
 	"startUnlocked": true,
 
 	"hideStoryMode": true,

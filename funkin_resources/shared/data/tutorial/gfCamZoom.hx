@@ -1,32 +1,26 @@
-import backend.Difficulty;
-
 var cameraTween:FlxTween;
-var isErect:Bool = Difficulty.getString().toLowerCase() == "erect" || Difficulty.getString().toLowerCase() == "nightmare";
 
 function onCreate()
 {
-	if (isErect)
+	if (game.isErect)
 		game.opponentCameraOffset = [-50, 0];
 }
 
 function onSongStart()
 {
-	if (isErect)
+	if (game.isErect)
 		game.camZooming = true;
 }
 
 function opponentNoteHit(note:Note)
 {
-	if (isErect)
-		return;
-
+	if (game.isErect) return;
 	game.camZooming = false;
 }
 
 function onMoveCamera(focus:String)
 {
-	if (isErect)
-		return;
+	if (game.isErect) return;
 
 	if (focus == 'boyfriend')
 	{
