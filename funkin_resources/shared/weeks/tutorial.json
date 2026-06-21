@@ -11,7 +11,7 @@
 	"storyName": "Teaching Time",
 	"weekBefore": "",
 	"weekName": "Tutorial",
-	"difficulties": "Easy, Normal, Hard, Erect, Nightmare",
+	"difficulties": ["easy", "normal", "hard", "erect", "nightmare"],
 	"startUnlocked": true,
 	"hideStoryMode": false,
 	"hideFreeplay": false
