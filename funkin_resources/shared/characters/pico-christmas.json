@@ -1,0 +1,164 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Pico Idle Dance xmas"
+		},
+		{
+			"offsets": [
+				80,
+				-43
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "Pico Down Note MISS xmas"
+		},
+		{
+			"offsets": [
+				38,
+				67
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "pico Up note miss xmas"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-52,
+				48
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "Pico Note Right Miss xmas",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				103,
+				28
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "Pico NOTE LEFT miss xmas",
+			"indices": []
+		},
+		{
+			"offsets": [
+				103,
+				-6
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Pico NOTE LEFT xmas"
+		},
+		{
+			"offsets": [
+				90,
+				-75
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Pico Down Note xmas"
+		},
+		{
+			"offsets": [
+				-51,
+				12
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Pico Note Right xmas"
+		},
+		{
+			"offsets": [
+				41,
+				67
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "pico Up note xmas"
+		},
+		{
+			"offsets": [
+				201,
+				117
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "DEATH PICO xmas"
+		},
+		{
+			"offsets": [
+				-42,
+				70
+			],
+			"loop": true,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "DEATH PICO loop"
+		},
+		{
+			"offsets": [
+				51,
+				283
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "DEATH PICO confirm"
+		}
+	],
+	"vocals_file": "pico-playable",
+	"no_antialiasing": false,
+	"image": "characters/pico-christmas",
+	"position": [
+		0,
+		300
+	],
+	"healthicon": "pico",
+	"flip_x": true,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		450,
+		-170
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

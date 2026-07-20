@@ -1,0 +1,145 @@
+{
+	"backdrop": {
+		"type": "solid",
+		"fadeTime": 2.0,
+		"color": "#BFB3DFD8"
+	},
+	"music": {
+		"asset": "weeb/Lunchbox",
+		"fadeTime": 2.0,
+		"looped": true
+	},
+	"outro": {
+		"type": "fade",
+		"fadeTime": 1.0
+	},
+	"dialogue": [
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "enter",
+			"box": "default",
+			"boxAnimation": "enter",
+			"text": ["Ah, another lovely fair maiden has graced m-"]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk-bwuh",
+			"box": "default",
+			"boxAnimation": "next",
+
+			"text": ["wait"]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk-bwuh",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["Ew."]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk-bwuh",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["Who are you two?"]
+		},
+		{
+			"speaker": "nene-pixel",
+			"speakerAnimation": "enter",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["I'm Nene."]
+		},
+		{
+			"speaker": "nene-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+
+			"text": ["He's Pico."]
+		},
+		{
+			"speaker": "pico-pixel",
+			"speakerAnimation": "enter",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["Hey."]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["My my, such odd clothing...", " How queer..."]
+		},
+		{
+			"speaker": "nene-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["Look who's talking."]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["And bringing a gun to school?", " How uncouth!"]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": [
+				"You've scared away all the lovely roses who enjoy my performances so..."
+			]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": [
+				"Even if it IS fake, you know that's at least 3 days suspension!"
+			]
+		},
+		{
+			"speaker": "nene-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["No that's real it-"]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": [
+				"I'll enjoy informing the principal, right after I teach you what's stronger than bad manners..."
+			]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["The beauty of SONG!"]
+		},
+		{
+			"speaker": "nene-pixel",
+			"speakerAnimation": "talk-peeved",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["..."]
+		},
+		{
+			"speaker": "pico-pixel",
+			"speakerAnimation": "talk-peeved",
+			"box": "default",
+			"boxAnimation": "next",
+			"text": ["..."]
+		}
+	]
+}

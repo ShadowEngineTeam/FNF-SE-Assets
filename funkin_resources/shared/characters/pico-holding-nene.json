@@ -1,0 +1,209 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Pico Idle Dance"
+		},
+		{
+			"offsets": [
+				86,
+				-71
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "note miss down pico nene"
+		},
+		{
+			"offsets": [
+				48,
+				26
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "note miss up piconene"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-65,
+				-39
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "note miss right pico nene",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				23,
+				-2
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "note miss left pico nene",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-54,
+				-34
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Pico Note Right"
+		},
+		{
+			"offsets": [
+				51,
+				32
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "pico Up note"
+		},
+		{
+			"offsets": [
+				31,
+				7
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "knifeToss",
+			"indices": [],
+			"name": "pico nene knife toss"
+		},
+		{
+			"offsets": [
+				13,
+				16
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "laugh",
+			"indices": [],
+			"name": "pico nene laughing full"
+		},
+		{
+			"offsets": [
+				620,
+				30
+			],
+			"loop": false,
+			"isFrameLabel": true,
+			"fps": 24,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "intro"
+		},
+		{
+			"offsets": [
+				620,
+				30
+			],
+			"loop": true,
+			"isFrameLabel": true,
+			"fps": 24,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "loop"
+		},
+		{
+			"offsets": [
+				620,
+				30
+			],
+			"loop": false,
+			"isFrameLabel": true,
+			"fps": 24,
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "confirm"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				70,
+				-70
+			],
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Pico Down Note"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				30,
+				4
+			],
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Pico NOTE LEFT"
+		}
+	],
+	"vocals_file": "pico-playable",
+	"no_antialiasing": false,
+	"image": [
+		"characters/pico-holding-nene",
+		"characters/pico-holding-nene/picoAndNene-DEAD"
+	],
+	"position": [
+		0,
+		230
+	],
+	"healthicon": "pico",
+	"flip_x": true,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		240,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

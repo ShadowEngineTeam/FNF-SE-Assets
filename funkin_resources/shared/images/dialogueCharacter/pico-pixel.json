@@ -1,0 +1,61 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "enter",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "portraitEnter",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "talk",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "portraitTalk",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				81,
+				54
+			],
+			"anim": "enter-peeved",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "portraitPeevedEnter",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				81,
+				54
+			],
+			"anim": "talk-peeved",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "portraitPeevedTalk",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": [
+		"dialoguecharacter/portrait-pico",
+		"dialoguecharacter/portrait-pico-peeved"
+	],
+	"position": [320, -75],
+	"scale": 5.4,
+	"flip_x": false
+}

@@ -3,13 +3,13 @@
   "defaultZoom": 0.9,
   "stageUI": "",
 
-  "boyfriend": [747.5, 80],
-  "girlfriend": [280, 150],
-  "opponent": [-250, 90],
+  "boyfriend": [747.5, 130],
+  "girlfriend": [180, 180],
+  "opponent": [-250, 110],
   "hide_girlfriend": false,
 
-  "camera_boyfriend": [-150, 0],
-  "camera_opponent": [150, 0],
+  "camera_boyfriend": [0, 0],
+  "camera_opponent": [0, 0],
   "camera_girlfriend": [0, 0],
   "camera_speed": 1,
 
@@ -24,7 +24,9 @@
       "stages/week1/erect/lightAbove",
       "stages/week1/erect/lightgreen",
       "stages/week1/erect/lightred",
-      "stages/week1/erect/orangeLight"
+      "stages/week1/erect/orangeLight",
+      "stages/mainStage/spotlight",
+      "stages/mainStage/smoke"
     ]
   }
 }

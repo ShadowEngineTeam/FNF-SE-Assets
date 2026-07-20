@@ -1,86 +1,308 @@
 {
-  "animations": [
-    {
-      "loop": false,
-      "offsets": [0, 0],
-      "fps": 24,
-      "anim": "idle",
-      "indices": [],
-      "name": "Pico Idle Dance"
-    },
-    {
-      "loop": false,
-      "offsets": [65, 9],
-      "fps": 24,
-      "anim": "singLEFT",
-      "indices": [],
-      "name": "Pico Note Right0"
-    },
-    {
-      "loop": false,
-      "offsets": [-68, -7],
-      "fps": 24,
-      "anim": "singRIGHT",
-      "indices": [],
-      "name": "Pico NOTE LEFT0"
-    },
-    {
-      "loop": false,
-      "offsets": [-60, 41],
-      "fps": 24,
-      "anim": "singRIGHTmiss",
-      "indices": [],
-      "name": "Pico NOTE LEFT miss"
-    },
-    {
-      "loop": false,
-      "offsets": [62, 64],
-      "fps": 24,
-      "anim": "singLEFTmiss",
-      "indices": [],
-      "name": "Pico Note Right Miss"
-    },
-    {
-      "loop": false,
-      "offsets": [-29, 27],
-      "fps": 24,
-      "anim": "singUP",
-      "indices": [],
-      "name": "pico Up note0"
-    },
-    {
-      "loop": false,
-      "offsets": [200, -70],
-      "fps": 24,
-      "anim": "singDOWN",
-      "indices": [],
-      "name": "Pico Down Note0"
-    },
-    {
-      "loop": false,
-      "offsets": [210, -28],
-      "fps": 24,
-      "anim": "singDOWNmiss",
-      "indices": [],
-      "name": "Pico Down Note MISS"
-    },
-    {
-      "loop": false,
-      "offsets": [-19, 67],
-      "fps": 24,
-      "anim": "singUPmiss",
-      "indices": [],
-      "name": "pico Up note miss"
-    }
-  ],
-  "no_antialiasing": false,
-  "image": "characters/Pico_FNF_assetss",
-  "position": [0, 300],
-  "healthicon": "pico",
-  "vocals_file": "pico",
-  "flip_x": true,
-  "healthbar_colors": [183, 216, 85],
-  "camera_position": [0, 0],
-  "sing_duration": 4,
-  "scale": 1
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Pico Idle Dance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				180,
+				-38
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "Pico Down Note MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				67
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "pico Up note miss",
+			"indices": []
+		},
+		{
+			"offsets": [
+				55,
+				50
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFFmiss",
+			"indices": [],
+			"name": "Pico Note Right Miss"
+		},
+		{
+			"offsets": [
+				-87,
+				28
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "Pico NOTE LEFT miss"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "reload",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico gun reload",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-80,
+				-10
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico NOTE LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				180,
+				-75
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico Down Note",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				60,
+				10
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico Note Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				57
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "pico Up note",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "pissed",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico Gets Pissed",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				30
+			],
+			"anim": "Yeah!",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico YEAH cheer",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				32,
+				3
+			],
+			"anim": "burpSmile",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "burp big pico",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				32,
+				3
+			],
+			"anim": "burpSmileLong",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "burp big pico",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				31,
+				31,
+				31,
+				31,
+				31,
+				31,
+				31,
+				31,
+				31,
+				31,
+				31
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-11,
+				-1
+			],
+			"anim": "shit",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "burping pico censor",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				12,
+				-1
+			],
+			"anim": "burpShit",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "burp small plus talk pico",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				75,
+				229
+			],
+			"anim": "shootAndReturn",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "shoot and return",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				77,
+				229
+			],
+			"anim": "shoot",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "shoot hip pico",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				130,
+				37
+			],
+			"anim": "hitCan",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico hit spray can",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				32,
+				1
+			],
+			"anim": "Hey!",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "Pico HEY!!",
+			"indices": []
+		}
+	],
+	"vocals_file": "pico",
+	"no_antialiasing": false,
+	"image": [
+		"characters/pico/playable-animations",
+		"characters/pico/basic-animations"
+	],
+	"position": [
+		0,
+		300
+	],
+	"healthicon": "pico",
+	"flip_x": true,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		-200,
+		-120
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
 }

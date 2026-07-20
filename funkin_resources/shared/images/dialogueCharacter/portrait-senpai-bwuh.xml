@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="spritesheet.png">
+	<SubTexture name="portraitBwuhEnter0000" x="0" y="0" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhEnter0001" x="0" y="0" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhEnter0002" x="66" y="0" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhEnter0003" x="66" y="0" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhEnter0004" x="0" y="58" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhEnter0005" x="0" y="58" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhEnter0006" x="66" y="58" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhEnter0007" x="66" y="58" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhTalk0000" x="66" y="58" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitBwuhTalk0001" x="66" y="58" width="66" height="58" frameX="-5" frameY="0" frameWidth="72" frameHeight="58" />
+</TextureAtlas>

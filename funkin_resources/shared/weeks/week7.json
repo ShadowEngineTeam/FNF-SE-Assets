@@ -1,0 +1,50 @@
+{
+	"songs": [
+		[
+			"ugh",
+			"tankman",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"guns",
+			"tankman",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"stress",
+			"tankman",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": ["easy", "normal", "hard", "erect", "nightmare"],
+	"weekCharacters": [
+		"tankman",
+		"bf",
+		"gf"
+	],
+	"storyName": "TANKMAN FT. JOHNNYUTAH",
+	"weekName": "tankman",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "Week6",
+	"startUnlocked": true
+}

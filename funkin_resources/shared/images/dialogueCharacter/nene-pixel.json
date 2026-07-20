@@ -1,0 +1,61 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "enter",
+			"fps": 12,
+			"isFrameLabel": false,
+			"name": "portraitEnter",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "talk",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "portraitTalk",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				48,
+				75
+			],
+			"anim": "enter-peeved",
+			"fps": 12,
+			"isFrameLabel": false,
+			"name": "portraitPeevedEnter",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				48,
+				75
+			],
+			"anim": "talk-peeved",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "portraitPeevedTalk",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": [
+		"dialoguecharacter/portrait-nene",
+		"dialoguecharacter/portrait-nene-peeved"
+	],
+	"position": [300, -65],
+	"scale": 5.4,
+	"flip_x": false
+}

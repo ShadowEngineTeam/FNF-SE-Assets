@@ -1,0 +1,175 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"fps": 24,
+			"anim": "idle",
+			"name": "Tankman Idle Dance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-31,
+				-30
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"name": "Tankman Note Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				70,
+				-100
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"name": "Tankman DOWN note",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				60
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"name": "Tankman UP note",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				70,
+				0
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"name": "Tankman Right Note",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				50
+			],
+			"fps": 24,
+			"anim": "idle-bloody",
+			"name": "Tankman Idle bloody",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-32,
+				15
+			],
+			"fps": 24,
+			"anim": "singRIGHT-bloody",
+			"name": "Tankman Note Left bloody",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				60,
+				-105
+			],
+			"fps": 24,
+			"anim": "singDOWN-bloody",
+			"name": "Tankman DOWN note bloody",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				40,
+				170
+			],
+			"fps": 24,
+			"anim": "singUP-bloody",
+			"name": "Tankman UP note bloody",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				80,
+				53
+			],
+			"fps": 24,
+			"anim": "singLEFT-bloody",
+			"name": "Tankman Right Note bloody",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				150,
+				125
+			],
+			"fps": 24,
+			"anim": "redheadsAnim",
+			"flipX": true,
+			"name": "tankman redheads plus knife",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				4,
+				89
+			],
+			"fps": 24,
+			"anim": "hehPrettyGood",
+			"flipX": true,
+			"name": "PRETTY GOOD tankman bloody",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				78
+			],
+			"fps": 24,
+			"anim": "stressPicoEnding",
+			"flipX": true,
+			"name": "tankman stress ending",
+			"indices": []
+		}
+	],
+	"vocals_file": "tankman",
+	"no_antialiasing": false,
+	"image": [
+		"characters/tankman/basic",
+		"characters/tankman/bloody",
+		"stages/tankmanBattlefield/erect/cutscene/tankmanEnding"
+	],
+	"position": [
+		3,
+		-44
+	],
+	"healthicon": "tankman",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		255
+	],
+	"camera_position": [
+		0,
+		32
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

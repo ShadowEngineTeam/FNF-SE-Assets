@@ -1,0 +1,124 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "idle",
+			"fps": 24,
+			"indices": [],
+			"name": "idle e"
+		},
+		{
+			"offsets": [
+				-2,
+				1
+			],
+			"loop": false,
+			"anim": "singLEFT",
+			"fps": 24,
+			"indices": [],
+			"name": "eunchae left"
+		},
+		{
+			"offsets": [
+				8,
+				9
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"indices": [],
+			"name": "eunchae down"
+		},
+		{
+			"offsets": [
+				-5,
+				22
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"indices": [],
+			"name": "eunchae up"
+		},
+		{
+			"offsets": [
+				-1,
+				8
+			],
+			"loop": false,
+			"anim": "singRIGHT",
+			"fps": 24,
+			"indices": [],
+			"name": "eunchae right"
+		},
+		{
+			"offsets": [
+				8,
+				2
+			],
+			"loop": false,
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"indices": [],
+			"name": "eunchae miss left"
+		},
+		{
+			"offsets": [
+				15,
+				5
+			],
+			"loop": false,
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"indices": [],
+			"name": "miss down"
+		},
+		{
+			"offsets": [
+				2,
+				22
+			],
+			"loop": false,
+			"anim": "singUPmiss",
+			"fps": 24,
+			"indices": [],
+			"name": "eunchae miss up"
+		},
+		{
+			"offsets": [
+				5,
+				6
+			],
+			"loop": false,
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"indices": [],
+			"name": "eunchae miss right"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/sserafim/eunchae",
+	"position": [
+		0,
+		260
+	],
+	"healthicon": null,
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		0,
+		260
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

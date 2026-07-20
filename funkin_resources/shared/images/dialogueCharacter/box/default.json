@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "enter",
+			"loop": false,
+			"name": "Text Box Appear0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [4,3,2,1,0],
+			"fps": 24,
+			"anim": "exit",
+			"loop": false,
+			"name": "Text Box Appear0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "next",
+			"loop": false,
+			"name": "Text Box Speaking0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "click",
+			"loop": false,
+			"name": "Text Box CLICK0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "wait",
+			"loop": true,
+			"name": "Text Box wait to click0"
+		}
+	],
+	"text": {
+		"offsets": [225, 450],
+		"width": 800,
+		"color": "#3F2021",
+		"fontFamily": "Pixel Arial 11 Bold",
+		"shadowColor": "#D89494",
+		"shadowWidth": 2,
+		"sounds": ["weeb/pixelText"]
+	},
+	"no_antialiasing": true,
+	"image": "dialogueCharacter/box/dialogueBox-new",
+	"position": [-110, -20],
+	"scale": 5.4,
+	"flip_x": false
+}

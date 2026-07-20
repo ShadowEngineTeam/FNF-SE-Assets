@@ -1,0 +1,13 @@
+a subtile
+
+value 1: subtile text you want to use;
+value 2: timer to it disappear (or just use raw)
+
+// raw
+first event
+value 1: hi bf
+value 2: blank
+
+second event
+value 1: blank
+value 2: blank

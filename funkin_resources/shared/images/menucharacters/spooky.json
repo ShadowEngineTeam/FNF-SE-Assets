@@ -1,0 +1,11 @@
+{
+	"idle_anim": "idle",
+	"image": "spooky",
+	"position": [
+		60,
+		-60
+	],
+	"flipX": false,
+	"scale": 1.2,
+	"confirm_anim": "idle"
+}

@@ -1,0 +1,263 @@
+{
+	"song": {
+		"events": [
+			[
+				0,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				5333.33333333333,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				10083.3333333333,
+				[
+					[
+						"Zoom Camera",
+						"12,1.05",
+						"quintinout"
+					]
+				]
+			],
+			[
+				10666,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				13333,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				16000,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				18666,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				21666,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				27000,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				32000,
+				[
+					[
+						"Dadbattle Spotlight",
+						"dad",
+						"0.4"
+					],
+					[
+						"Dadbattle Spotlight",
+						"bg",
+						"0.4"
+					]
+				]
+			],
+			[
+				32166,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				42666.6666666667,
+				[
+					[
+					[
+						"Dadbattle Spotlight",
+						"bf",
+						"0.4"
+					],
+					[
+						"Dadbattle Spotlight",
+						"dad",
+						"0"
+					]
+				]
+				]
+			],
+			[
+				42833,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				53333,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				53333.3333333334,
+				[
+					[
+						"Dadbattle Spotlight",
+						"bf",
+						"0"
+					],
+					[
+						"Dadbattle Spotlight",
+						"bg",
+						"0"
+					]
+				]
+			],
+			[
+				56000,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				58666,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				61333,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				64333,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				69666,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				74666,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				77333,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				80000,
+				[
+					[
+						"Focus Camera",
+						"dad",
+						"0,0,4,classic"
+					]
+				]
+			],
+			[
+				82666,
+				[
+					[
+						"Focus Camera",
+						"bf",
+						"0,0,4,classic"
+					]
+				]
+			]
+		]
+	}
+}

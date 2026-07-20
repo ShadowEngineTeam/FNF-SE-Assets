@@ -1,0 +1,32 @@
+{
+	"songs": [
+		[
+			"Spaghetti",
+			"bf",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": "",
+	"weekCharacters": [
+		"spaghetti",
+		"bf",
+		"gf"
+	],
+	"storyName": "LE SSERAFIM",
+	"weekName": "sserafim",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

@@ -1,0 +1,42 @@
+{
+	"songs": [
+		["bopeebo",
+			"dad",
+			[175,
+				102,
+				206]],
+		["fresh",
+			"dad",
+			[175,
+				102,
+				206]],
+		["dadbattle",
+			"dad",
+			[175,
+				102,
+				206]]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": ["easy",
+		"normal",
+		"hard",
+		"erect",
+		"nightmare"],
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "DADDY DEAREST",
+	"weekName": "daddydearest",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

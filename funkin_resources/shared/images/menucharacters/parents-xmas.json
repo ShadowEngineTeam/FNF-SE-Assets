@@ -1,0 +1,11 @@
+{
+	"idle_anim": "idle",
+	"image": "parents-xmas",
+	"position": [
+		170,
+		10
+	],
+	"flipX": false,
+	"scale": 1,
+	"confirm_anim": "idle"
+}

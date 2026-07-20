@@ -1,0 +1,19 @@
+so yeah
+how this is work
+the character sprite is based off Character 
+here how results work
+ratingName has 5 of them, Perfect, Excellent, Great, Good, Shit and make sure lowerCase them when set
+"ratingName" {
+	music = "you music"
+	offsets = ["you character x", "you character y"]
+	scale = you character scale or leave blank if you prefer 1
+	sprite [
+		{// you result sprite also based off Character
+		animations for Character
+		offsets = ["you sprite x", "you sprite y"]
+		scale = you character scale
+		index = number where you add Infront character or behind 
+		}
+	]
+}
+or you can look at bf file to see how it work

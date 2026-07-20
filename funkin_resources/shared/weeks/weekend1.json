@@ -1,0 +1,63 @@
+{
+	"songs": [
+		[
+			"darnell",
+			"darnell",
+			[
+				115,
+				94,
+				176
+			]
+		],
+		[
+			"lit-up",
+			"darnell",
+			[
+				115,
+				94,
+				176
+			]
+		],
+		[
+			"2hot",
+			"darnell",
+			[
+				115,
+				94,
+				176
+			]
+		],
+		[
+			"blazin",
+			"darnell",
+			[
+				115,
+				94,
+				176
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": ["easy",
+		"normal",
+		"hard",
+		"erect",
+		"nightmare"],
+	"weekCharacters": [
+		"darnell",
+		"pico-playable",
+		"nene"
+	],
+	"storyName": "DUE DEBTS",
+	"weekName": "duedebts",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

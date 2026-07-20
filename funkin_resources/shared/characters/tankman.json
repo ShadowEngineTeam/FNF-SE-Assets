@@ -1,0 +1,143 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "idle",
+			"fps": 24,
+			"indices": [],
+			"name": "Tankman Idle Dance"
+		},
+		{
+			"offsets": [
+				-31,
+				-30
+			],
+			"loop": false,
+			"anim": "singRIGHT",
+			"fps": 24,
+			"indices": [],
+			"name": "Tankman Note Left"
+		},
+		{
+			"offsets": [
+				70,
+				-100
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"indices": [],
+			"name": "Tankman DOWN note"
+		},
+		{
+			"offsets": [
+				20,
+				60
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"indices": [],
+			"name": "Tankman UP note"
+		},
+		{
+			"offsets": [
+				70,
+				0
+			],
+			"loop": false,
+			"anim": "singLEFT",
+			"fps": 24,
+			"indices": [],
+			"name": "Tankman Right Note"
+		},
+		{
+			"offsets": [
+				-16,
+				-9
+			],
+			"loop": false,
+			"anim": "ugh",
+			"fps": 24,
+			"indices": [],
+			"name": "TANKMAN UGH",
+			"flipX": true
+		},
+		{
+			"offsets": [
+				-15,
+				14
+			],
+			"loop": false,
+			"anim": "laugh",
+			"fps": 24,
+			"indices": [],
+			"name": "tankman laugh",
+			"flipX": true
+		},
+		{
+			"offsets": [
+				5,
+				20
+			],
+			"loop": false,
+			"anim": "hehPrettyGood",
+			"fps": 24,
+			"indices": [],
+			"name": "PRETTY GOOD tankman",
+			"flipX": true
+		},
+		{
+			"offsets": [
+				84,
+				-4
+			],
+			"loop": false,
+			"anim": "beat it",
+			"fps": 24,
+			"indices": [],
+			"name": "tankman beat it",
+			"flipX": true
+		},
+		{
+			"offsets": [
+				69,
+				23
+			],
+			"loop": false,
+			"anim": "augh",
+			"fps": 24,
+			"indices": [],
+			"name": "tankman ARGH",
+			"flipX": true
+		}
+	],
+	"vocals_file": "tankman",
+	"no_antialiasing": false,
+	"image": [
+		"characters/tankman/basic",
+		"characters/tankman/extra-animations"
+	],
+	"position": [
+		3,
+		-44
+	],
+	"healthicon": "tankman",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		255
+	],
+	"camera_position": [
+		0,
+		32
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

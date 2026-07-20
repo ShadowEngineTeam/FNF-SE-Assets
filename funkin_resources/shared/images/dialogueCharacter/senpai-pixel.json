@@ -1,0 +1,85 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "enter",
+			"fps": 12,
+			"isFrameLabel": false,
+			"name": "portraitEnter",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "talk",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "portraitTalk",
+			"indices": []
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				-22,
+				10
+			],
+			"indices": [],
+			"fps": 12,
+			"anim": "enter-angry",
+			"loop": false,
+			"name": "portraitAngryEnter"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				-22,
+				10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "talk-angry",
+			"loop": false,
+			"name": "portraitAngryTalk"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				27,
+				10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "talk-bwuh",
+			"loop": false,
+			"name": "portraitBwuhTalk"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				27,
+				10
+			],
+			"indices": [],
+			"fps": 12,
+			"anim": "enter-bwuh",
+			"loop": false,
+			"name": "portraitBwuhEnter"
+		}
+	],
+	"no_antialiasing": true,
+	"image": [
+		"dialogueCharacter/portrait-senpai",
+		"dialogueCharacter/portrait-senpai-angry",
+		"dialogueCharacter/portrait-senpai-bwuh"
+	],
+	"position": [-380, -100],
+	"scale": 5.4,
+	"flip_x": false
+}

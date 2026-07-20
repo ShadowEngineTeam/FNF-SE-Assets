@@ -1,0 +1,4 @@
+exclusive for week 1 aka "stage" Stage
+Value 1: Target Spotlight At (Dad, BF, GF, BG, SMOKE)
+	Note: it won't disable other characters spotlight unless you set Value 2 Alpha
+Value 2: separated with ',' Alpha, Duration (Step), EASE (leave blank = CLASSIC(that will change instantly))

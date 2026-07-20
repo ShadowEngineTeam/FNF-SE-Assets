@@ -1,0 +1,81 @@
+{
+	"animations": [
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "enter",
+			"loop": false,
+			"name": "Spirit Textbox spawn0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [11,10,9,8,7,6,5,4,3,2,1,0],
+			"fps": 24,
+			"anim": "exit",
+			"loop": false,
+			"name": "Spirit Textbox spawn0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "next",
+			"loop": false,
+			"name": "Spirit Textbox0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "click",
+			"loop": false,
+			"name": "Spirit Text Box Click0"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "wait",
+			"loop": true,
+			"name": "Spirit Textbox0"
+		}
+	],
+	"text": {
+		"offsets": [225, 450],
+		"width": 900,
+		"color": "#FFFFFF",
+		"fontFamily": "Pixel Arial 11 Bold",
+		"shadowColor": "#000000",
+		"shadowWidth": 0,
+		"sounds": ["weeb/pixelText"]
+	},
+	"no_antialiasing": true,
+	"image": "dialogueCharacter/box/dialogueBox-evilNew",
+	"position": [-110, -20],
+	"scale": 5.4,
+	"healthicon": "bf",
+	"flip_x": false,
+	"healthbar_colors": [0,0,0],
+	"camera_position": [0,0,0]
+}

@@ -1,0 +1,390 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"fps": 24,
+			"anim": "idle",
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-8,
+				-7
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"name": "sakura left pose",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				-14
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"name": "sakura down pose",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-9,
+				24
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"name": "sakura up pose",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-11,
+				4
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"name": "sakura right pose",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				-4
+			],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"name": "sakura miss left pose",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-4
+			],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"name": "sakura miss down pose",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				28
+			],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"name": "sakura miss up pose",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-10,
+				8
+			],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"name": "sakura miss right pose",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				-11
+			],
+			"fps": 24,
+			"anim": "singLEFT-joint",
+			"name": "joint pose left",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				-27
+			],
+			"fps": 24,
+			"anim": "singDOWN-joint",
+			"name": "joint pose down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-21,
+				34
+			],
+			"fps": 24,
+			"anim": "singUP-joint",
+			"name": "joint pose up",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-40,
+				7
+			],
+			"fps": 24,
+			"anim": "singRIGHT-joint",
+			"name": "joint pose right",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				5,
+				-6
+			],
+			"fps": 24,
+			"anim": "singLEFT-bf1",
+			"name": "bf left pose 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-20,
+				-18
+			],
+			"fps": 24,
+			"anim": "singDOWN-bf1",
+			"name": "bf down pose 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-22,
+				11
+			],
+			"fps": 24,
+			"anim": "singUP-bf1",
+			"name": "bf up pose 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-40,
+				4
+			],
+			"fps": 24,
+			"anim": "singRIGHT-bf1",
+			"name": "bf right pose 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				-6
+			],
+			"fps": 24,
+			"anim": "singLEFT-bf2",
+			"name": "bf left pose 2",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				-19
+			],
+			"fps": 24,
+			"anim": "singDOWN-bf2",
+			"name": "bf down pose 2",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-22,
+				11
+			],
+			"fps": 24,
+			"anim": "singUP-bf2",
+			"name": "bf up pose 2",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-39,
+				4
+			],
+			"fps": 24,
+			"anim": "singRIGHT-bf2",
+			"name": "bf right pose 2",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-9,
+				-235
+			],
+			"fps": 24,
+			"anim": "intro-static",
+			"name": "BF Get Up",
+			"indices": [
+				0,
+				0
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-9,
+				-235
+			],
+			"fps": 24,
+			"anim": "intro",
+			"name": "BF Get Up",
+			"indices": []
+		}
+	],
+	"vocals_file": "sserafim-sakura",
+	"no_antialiasing": false,
+	"image": [
+		"characters/sserafim/sakura",
+		"stages/sserafim/cutscene/bfGetup"
+	],
+	"position": [
+		0,
+		50
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		-110,
+		170
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

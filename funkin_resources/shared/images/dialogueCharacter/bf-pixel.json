@@ -1,0 +1,33 @@
+{
+	"animations": [
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 12,
+			"anim": "enter",
+			"loop": false,
+			"name": "portraitEnter"
+		},
+		{
+			"isFrameLabel": false,
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "talk",
+			"loop": false,
+			"name": "portraitTalk"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "dialogueCharacter/portrait-boyfriend",
+	"position": [300, -10],
+	"scale": 5.4,
+	"flip_x": false
+}

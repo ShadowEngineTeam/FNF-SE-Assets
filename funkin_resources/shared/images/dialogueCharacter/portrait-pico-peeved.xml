@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="spritesheet.png">
+	<SubTexture name="portraitPeevedEnter0000" x="0" y="0" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedEnter0001" x="0" y="0" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedEnter0002" x="58" y="0" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedEnter0003" x="58" y="0" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedEnter0004" x="0" y="53" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedEnter0005" x="0" y="53" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedEnter0006" x="58" y="53" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedEnter0007" x="58" y="53" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedTalk0000" x="58" y="53" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+	<SubTexture name="portraitPeevedTalk0001" x="58" y="53" width="58" height="53" frameX="-8" frameY="-5" frameWidth="72" frameHeight="58" />
+</TextureAtlas>

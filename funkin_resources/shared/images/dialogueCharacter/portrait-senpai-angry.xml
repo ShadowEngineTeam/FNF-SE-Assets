@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="spritesheet.png">
+	<SubTexture name="portraitAngryEnter0000" x="0" y="0" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryEnter0001" x="0" y="0" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryEnter0002" x="66" y="0" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryEnter0003" x="66" y="0" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryEnter0004" x="0" y="58" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryEnter0005" x="0" y="58" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryEnter0006" x="66" y="58" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryEnter0007" x="66" y="58" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryTalk0000" x="66" y="58" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+	<SubTexture name="portraitAngryTalk0001" x="66" y="58" width="66" height="58" frameX="4" frameY="0" frameWidth="66" frameHeight="58" />
+</TextureAtlas>
