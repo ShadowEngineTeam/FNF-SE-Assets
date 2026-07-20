@@ -3,7 +3,7 @@ import substates.GameOverSubstate;
 
 function onCreate()
 {
-	GameOverSubstate.deathSoundName = "fnf_loss_sfx-pico";
+	GameOverSubstate.deathSoundName = "fnf_loss_sfx-pico-pixel";
 	GameOverSubstate.loopSoundName = "gameOver-pico";
 	GameOverSubstate.endSoundName = "gameOverEnd-pico";
 }

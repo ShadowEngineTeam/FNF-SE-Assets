@@ -1,7 +1,7 @@
 import backend.MusicBeatSubstate;
 import substates.GameOverSubstate;
 function onCreate(){
-	GameOverSubstate.deathSoundName = "phillyStreets/gameplay/gameOver/fnf_loss_sfx-pico";
+	GameOverSubstate.deathSoundName = "fnf_loss_sfx-pico";
 	GameOverSubstate.loopSoundName = "gameOver-pico";
 	GameOverSubstate.endSoundName = "gameOverEnd-pico";
 }

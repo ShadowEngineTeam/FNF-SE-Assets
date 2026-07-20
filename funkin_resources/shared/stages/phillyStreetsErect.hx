@@ -393,6 +393,7 @@ function finishCanAnimation(name){
 			spraycanAtlas.visible = false;
 			explodeEZ.visible = true;
 			explodeEZ.animation.play("idle",true);
+			FlxG.sound.play(Paths.sound("phillyStreets/Pico_Bonk"));
 			if ((game.health - 0.7) <= 0) game.boyfriend.idleSuffix = "-explode";
 			game.health -= 0.7;
 			
