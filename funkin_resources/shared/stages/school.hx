@@ -74,7 +74,7 @@ function onStartCountdown() {
 	if (!start && seen && PlayState.isStoryMode) {
 		game.callOnScripts("startConversation");
 		start = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 }
 function onBeatHit() {

@@ -4,6 +4,6 @@ function onStartCountdown() {
 	if (!videoStart & story) {
 		game.startVideo("gunsCutscene");
 		videoStart = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 }

@@ -8,6 +8,6 @@ function onStartCountdown() {
 	if (!start && seen) {
 		game.callOnScripts("startConversation", ["pico/dialogue"]);
 		start = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 }

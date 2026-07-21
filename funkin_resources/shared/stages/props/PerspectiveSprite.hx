@@ -37,17 +37,19 @@ function updatePerspectiveView(){
 		var targetCam = sprite.camera;
 		var bottom = i[1].bottom;
 		var top = i[1].top;
-		var correctedBottom = new FlxBasePoint(bottom.x + (targetCam.scroll.x * (sprite.scrollFactor.x - bottom.scrollFactor.x)), bottom.y + (targetCam.scroll.y * (sprite.scrollFactor.y - bottom.scrollFactor.y)));
-		var correctedTop = new FlxBasePoint(top.x + (targetCam.scroll.x * (sprite.scrollFactor.x - top.scrollFactor.x)), top.y + (targetCam.scroll.y * (sprite.scrollFactor.y - top.scrollFactor.y)));
-		var distX = correctedTop.x - correctedBottom.x;
-		var distY = correctedTop.y - (correctedBottom.y - sprite.height);
+		var correctedBottomX = bottom.x + (targetCam.scroll.x * (sprite.scrollFactor.x - bottom.scrollFactor.x));
+		var correctedBottomY = bottom.y + (targetCam.scroll.y * (sprite.scrollFactor.y - bottom.scrollFactor.y));
+		var correctedTopX = top.x + (targetCam.scroll.x * (sprite.scrollFactor.x - top.scrollFactor.x));
+		var correctedTopY = top.y + (targetCam.scroll.y * (sprite.scrollFactor.y - top.scrollFactor.y));
+		var distX = correctedTopX - correctedBottomX;
+		var distY = correctedTopY - (correctedBottomY - sprite.height);
 		sprite.transformMatrix.a = 1;
 		sprite.transformMatrix.b = 0;
 		sprite.transformMatrix.c = -(distX / sprite.height);
 		sprite.transformMatrix.d = 1 - (distY / sprite.height);
 		sprite.transformMatrix.tx = distX / 2;
 		sprite.transformMatrix.ty = distY / 2;
-		sprite.x = correctedBottom.x - sprite.width / 2;
-		sprite.y = correctedBottom.y - sprite.height;
+		sprite.x = correctedBottomX - sprite.width / 2;
+		sprite.y = correctedBottomY - sprite.height;
 	}
 }

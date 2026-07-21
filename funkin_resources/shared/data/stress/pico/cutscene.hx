@@ -5,7 +5,7 @@ function onStartCountdown() {
 	if (!videoStart & canPlayVideo) {
 		game.startVideo("stressPicoCutscene");
 		videoStart = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 	game.startHScriptsNamed("custom_events/Subtitle");
 }
@@ -14,7 +14,7 @@ function onEndSong(){
 	if (!endCutsceneStart){
 		startEndCutscene();
 		endCutsceneStart = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 }
 function getSecond(second:Float){

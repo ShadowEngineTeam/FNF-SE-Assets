@@ -187,7 +187,7 @@ function onStartCountdown(){
 	if (doCutscene){
 		startCutscene();
 		doCutscene = false;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 	if (!doCutscene) {
 		new FlxTimer().start(0.166666667, function() {
@@ -201,12 +201,14 @@ function onStartCountdown(){
 		});
 	}
 	finishedCutscene = true;
-	return "##PSYCHLUA_FUNCTIONSTOP";
+	return Function_Stop;
 }
 function onUpdatePost(elapsed){
 	updateView(FlxG.camera);
 	game.playerDance();
 }
+var injectedLipFrames = [];
+var injectedLipSprites = [];
 function addLip(char:Character, target:String, ?arrayAnim) {
 	var lip = new FlxAnimate();
 	var assets = "stages/sserafim/sserafim-lipsync";
@@ -220,25 +222,43 @@ function addLip(char:Character, target:String, ?arrayAnim) {
 	element.active = false;
 	for (frame in getFramesWithKeyword(char, target)){
 		frame.add(element);
+		injectedLipFrames.push([frame, element]);
 	}
+	injectedLipSprites.push(lip);
+	var lastAnimName = null;
+	var lastShader = null;
 	char.anim.onFrameChange.add(function(name) {
 		if (StringTools.startsWith(name, "sing")){
 			lip.anim.curAnim.curFrame = Math.floor((Conductor.songPosition/1000)*24) - 1;
 		} else {
 			lip.anim.curAnim.curFrame = 0;
 		}
-		if (arrayAnim != null)
+		if (arrayAnim != null && lastAnimName != name) {
+			lastAnimName = name;
 			for (i in arrayAnim) {
 				if (i[0]== name) {
 					lip.offset.set(i[1][0], i[1][1]);
 					lip.angle = i[1][2];
 				}
 			}
-		lip.shader = char.shader;
+		}
+		if (lastShader != char.shader) {
+			lastShader = char.shader;
+			lip.shader = lastShader;
+		}
 	});
 }
 function updateView(camera) {
 	game.callOnScripts("updatePerspectiveView");
+}
+function onDestroy() {
+	for (i in injectedLipFrames) {
+		i[0].elements.remove(i[1]);
+		i[0].setDirty();
+	}
+	injectedLipFrames = [];
+	for (lip in injectedLipSprites) lip.destroy();
+	injectedLipSprites = [];
 }
 var singAnimations = ["singLEFT", "singDOWN", "singUP", "singRIGHT"];
 var baseSinging = [false, false, false, false, false];
@@ -294,7 +314,7 @@ function onEvent(n, v1, v2) {
 		case "Focus Camera": game.callOnScripts("updatePerspectiveView");
 		case "Sserafim Sing":
 			baseSinging = v1.split(",");
-			for (i in 0...baseSinging)
+			for (i in 0...baseSinging.length)
 				baseSinging[i] = baseSinging[i] == "true";
 		case "Sserafim Show":
 			var baseVisible = v1.split(",");
@@ -579,10 +599,15 @@ function startCutscene(){
 			game.triggerEvent("Zoom Camera", "5.575, 0.55", "circOut");
 			game.startCountdown();
 			newCam.bgColor = 0;
-			for (i in [bg, table, burger, cutscene]) remove(i);
+			for (i in [bg, table, burger, cutscene]) {
+				remove(i);
+				i.destroy();
+			}
 			perspectiveFloor.cameras = defaultCam;
 			FlxTween.tween(solid,{alpha: 0}, 3, {ease: FlxEase.sineOut, onComplete: () -> {
 				FlxG.cameras.remove(newCam, true);
+				remove(solid);
+				solid.destroy();
 			}});
 			perspectiveFloor.loadGraphic(Paths.image('stages/sserafim/floor'));
 		});

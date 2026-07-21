@@ -46,7 +46,7 @@ function onStartCountdown(){
 		new FlxTimer().start(1, function() { startCutscene();
 		});
 		alreadyStart = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 	camHUD.visible = true;
 }

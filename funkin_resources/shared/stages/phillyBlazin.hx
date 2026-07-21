@@ -10,6 +10,12 @@ function onCreate(){
 	scrollingSky.setPosition(-600,-175);
 	scrollingSky.scrollFactor.set();
 	scrollingSky.scale.set(1.75,1.75);
+	// FlxBackdrop floors each tile's position but sizes tiles by frameWidth * scale.x.
+	// 1387 * 1.75 = 2427.25, so the fraction leaves a 1px seam at the tile boundary that
+	// shows the dark background through and drifts left as the sky scrolls. Pad the
+	// spacing until the scaled tile lands on a whole pixel.
+	var skyTileW = scrollingSky.frameWidth * scrollingSky.scale.x;
+	scrollingSky.spacing.set((Math.ceil(skyTileW) - skyTileW) / scrollingSky.scale.x, 0);
 	
 	sky = new BGSprite("stages/phillyStreets/phillyBlazin/skyBlur", -600, -175, 0,0);
 	sky.scale.set(1.75,1.75);
@@ -63,7 +69,9 @@ function onUpdatePost(elap){
 		applyLightning();
 		lightningTimer = FlxG.random.float(7, 15);
 	}
-	for (i in opponentStrums)i.x -= 999;
+	// absolute, not -= : this runs every frame, so subtracting drifts them a further
+	// 999px every tick instead of just parking them off-screen once
+	for (i in opponentStrums)i.x = -999;
 	for (i in 0...playerStrums.length){
 		var stru = playerStrums.members[i];
 		var startX = FlxG.width/2 - Note.swagWidth*(playerStrums.length/2);
@@ -72,7 +80,11 @@ function onUpdatePost(elap){
 }
 function applyLightning(){
 	sky.alpha = 0.7;
-	FlxTween.tween(sky, {alpha: 0.0}, 1.5);
+	// the bolt has to be hidden again once the flash is over, otherwise it just sits
+	// there on its last frame for the rest of the song
+	FlxTween.tween(sky, {alpha: 0.0}, 1.5, {onComplete: function(_) {
+		lightning.visible = false;
+	}});
 	forego.alpha = 0.64;
 	FlxTween.tween(forego, {alpha: 0.0}, 1.5);
 	

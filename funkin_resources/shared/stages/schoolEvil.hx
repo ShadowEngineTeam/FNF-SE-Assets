@@ -97,12 +97,12 @@ function onStartCountdown() {
 				});
 			}
 		});
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 	if (!start && seen && PlayState.isStoryMode) {
 		game.callOnScripts("startConversation");
 		start = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 }
 function onUpdate(e){

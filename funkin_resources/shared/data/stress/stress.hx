@@ -4,6 +4,6 @@ function onStartCountdown() {
 	if (!videoStart & story) {
 		game.startVideo("stressCutscene");
 		videoStart = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 }

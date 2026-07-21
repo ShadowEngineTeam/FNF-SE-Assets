@@ -4,6 +4,6 @@ function onStartCountdown() {
 	if (!videoStart & story) {
 		game.startVideo("ughCutscene");
 		videoStart = true;
-		return "##PSYCHLUA_FUNCTIONSTOP";
+		return Function_Stop;
 	}
 }

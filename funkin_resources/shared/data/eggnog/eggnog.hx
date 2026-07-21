@@ -52,5 +52,5 @@ function onEndSong() {
 		});
 	});
 	start = true;
-	return "##PSYCHLUA_FUNCTIONSTOP";
+	return Function_Stop;
 }
