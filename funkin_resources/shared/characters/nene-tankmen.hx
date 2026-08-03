@@ -39,7 +39,7 @@ function onCreate() {
 	pupil = new FlxAnimate();
 	pupil.frames = Paths.getTextureAtlas("characters/abot/systemEyes");
 	pupil.anim.addBySymbolIndices("left", "a bot eyes lookin", CoolUtil.numberArray(16), 24, false);
-	pupil.anim.addBySymbolIndices("right","a bot eyes lookin",CoolUtil.numberArray(32,17),24, false);
+	pupil.anim.addBySymbolIndices("right", "a bot eyes lookin",CoolUtil.numberArray(32,17),24, false);
 	
 	var adjustColor = new AdjustColorShader();
 	adjustColor.brightness = -40;
