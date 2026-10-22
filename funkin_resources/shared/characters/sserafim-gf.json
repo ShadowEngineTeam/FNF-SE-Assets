@@ -260,7 +260,7 @@
 	"no_antialiasing": false,
 	"image": [
 		"characters/sserafim/sserafim-gf",
-		"stages/sserafim/cutscene/gfGetup"
+		"stages/sserafim/cutscene/gfGetUp"
 	],
 	"position": [
 		20,

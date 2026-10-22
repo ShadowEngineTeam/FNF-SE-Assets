@@ -367,7 +367,7 @@
 	"no_antialiasing": false,
 	"image": [
 		"characters/sserafim/sakura",
-		"stages/sserafim/cutscene/bfGetup"
+		"stages/sserafim/cutscene/bfGetUp"
 	],
 	"position": [
 		0,

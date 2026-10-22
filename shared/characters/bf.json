@@ -175,8 +175,8 @@
 	"vocals_file": "bf",
 	"no_antialiasing": false,
 	"image": [
-		"characters/boyfriend",
-		"characters/boyfriend_dead"
+		"characters/BOYFRIEND",
+		"characters/BOYFRIEND_DEAD"
 	],
 	"position": [
 		0,

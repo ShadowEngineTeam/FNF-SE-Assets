@@ -7,7 +7,7 @@ function onCreate(){
 }
 function onGameOverStart() {
 	var nene = new FlxSprite(game.gf.x, game.gf.y);
-	nene.frames = Paths.getSparrowAtlas("characters/neneKnifeToss");
+	nene.frames = Paths.getSparrowAtlas("characters/NeneKnifeToss");
 	nene.animation.addByPrefix("i", "knife toss", 24, false);
 	nene.animation.play("i");
 	nene.animation.onFinish.add(function(name) nene.visible = false);

@@ -30,7 +30,7 @@ function onCreate()
 	neneAbotSpeaker.antialiasing = false;
 	neneAbotSpeaker.animation.addByPrefix('idle', 'danceLeft', 24, false);
 
-	neneAbotBack = new BGSprite("characters/abotPixel/abotPixelBack");
+	neneAbotBack = new BGSprite("characters/abotPixel/aBotPixelBack");
 	neneAbotBack.antialiasing = false;
 	neneAbotBack.scale.set(6.1, 6);
 
