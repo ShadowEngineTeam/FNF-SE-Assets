@@ -126,7 +126,6 @@ function onUpdate(elapsed)
 	visSystem.setPosition(neneAbot.x - 180, neneAbot.y - 50);
 	neneAbotHead.setPosition(neneAbot.x - 325, neneAbot.y + 70);
 	neneAbotBack.setPosition(neneAbot.x - 60, neneAbot.y);
-	// music channel may not exist yet at onSongStart (e.g. on macOS); retry until it does
 	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._channel != null)
 		initAudioSource();
 	if (FlxG.sound.music != null && analyzer != null)

@@ -85,7 +85,6 @@ function onUpdatePost(elapsed) {
 	eyeWhites.setPosition(neneAbot.x + 40, neneAbot.y + 230);
 	pupil.setPosition(neneAbot.x + 50, neneAbot.y + 238);
 	stereoBG.setPosition(neneAbot.x + 150, neneAbot.y + 30);
-	// music channel may not exist yet at onSongStart (e.g. on macOS); retry until it does
 	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._channel != null)
 		initAudioSource();
 	if (FlxG.sound.music != null && analyzer != null){
