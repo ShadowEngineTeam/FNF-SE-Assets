@@ -126,7 +126,7 @@ function onUpdate(elapsed)
 	visSystem.setPosition(neneAbot.x - 180, neneAbot.y - 50);
 	neneAbotHead.setPosition(neneAbot.x - 325, neneAbot.y + 70);
 	neneAbotBack.setPosition(neneAbot.x - 60, neneAbot.y);
-	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._channel != null)
+	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._source != null)
 		initAudioSource();
 	if (FlxG.sound.music != null && analyzer != null)
 	{
@@ -153,10 +153,8 @@ function onUpdate(elapsed)
 
 function initAudioSource()
 {
-	var ch = FlxG.sound.music != null ? FlxG.sound.music._channel : null;
-	if (ch == null)
-		return;
-	var src = ch.__audioSource;
+	// flixel fork: FlxSound no longer has a SoundChannel (_channel), it keeps the lime AudioSource in _source
+	var src = FlxG.sound.music != null ? FlxG.sound.music._source : null;
 	if (src == null)
 		return;
 	analyzer = new SpectralAnalyzer(src, 7, 0.1, 40);
