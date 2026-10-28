@@ -85,6 +85,9 @@ function onUpdatePost(elapsed) {
 	eyeWhites.setPosition(neneAbot.x + 40, neneAbot.y + 230);
 	pupil.setPosition(neneAbot.x + 50, neneAbot.y + 238);
 	stereoBG.setPosition(neneAbot.x + 150, neneAbot.y + 30);
+	// music channel may not exist yet at onSongStart (e.g. on macOS); retry until it does
+	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._channel != null)
+		initAudioSource();
 	if (FlxG.sound.music != null && analyzer != null){
 		levels = (FlxG.sound.music.volume == 0 || FlxG.sound.mute) ? [{value:0},{value:0},{value:0},{value:0},{value:0},{value:0},{value:0}] : analyzer.getLevels(levels);
 	}
@@ -97,7 +100,13 @@ function onUpdatePost(elapsed) {
 //	neneAbot.anim.play("idle",true,false, 16 - specHighest(levels) * 16);
 }
 function initAudioSource(){
-	analyzer = new SpectralAnalyzer(FlxG.sound.music._channel.__audioSource, 7, 0.1, 40);
+	var ch = FlxG.sound.music != null ? FlxG.sound.music._channel : null;
+	if (ch == null)
+		return;
+	var src = ch.__audioSource;
+	if (src == null)
+		return;
+	analyzer = new SpectralAnalyzer(src, 7, 0.1, 40);
 	analyzer.minDb = -65;
 	analyzer.maxDb = -25;
 	analyzer.maxFreq = 22000;

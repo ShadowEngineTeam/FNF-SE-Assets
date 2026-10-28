@@ -126,6 +126,9 @@ function onUpdate(elapsed)
 	visSystem.setPosition(neneAbot.x - 180, neneAbot.y - 50);
 	neneAbotHead.setPosition(neneAbot.x - 325, neneAbot.y + 70);
 	neneAbotBack.setPosition(neneAbot.x - 60, neneAbot.y);
+	// music channel may not exist yet at onSongStart (e.g. on macOS); retry until it does
+	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._channel != null)
+		initAudioSource();
 	if (FlxG.sound.music != null && analyzer != null)
 	{
 		levels = (FlxG.sound.music.volume == 0 || FlxG.sound.mute) ? [
@@ -151,7 +154,13 @@ function onUpdate(elapsed)
 
 function initAudioSource()
 {
-	analyzer = new SpectralAnalyzer(FlxG.sound.music._channel.__audioSource, 7, 0.1, 40);
+	var ch = FlxG.sound.music != null ? FlxG.sound.music._channel : null;
+	if (ch == null)
+		return;
+	var src = ch.__audioSource;
+	if (src == null)
+		return;
+	analyzer = new SpectralAnalyzer(src, 7, 0.1, 40);
 	analyzer.minDb = -65;
 	analyzer.maxDb = -25;
 	analyzer.maxFreq = 22000;
