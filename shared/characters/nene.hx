@@ -106,24 +106,18 @@ function onUpdatePost(elapsed)
 	stereoBG.setPosition(neneAbot.x + 150, neneAbot.y + 30);
 	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._source != null)
 		initAudioSource();
-	if (FlxG.sound.music != null && analyzer != null)
-	{
-		levels = (FlxG.sound.music.volume == 0 || FlxG.sound.mute) ? [
-			{value: 0},
-			{value: 0},
-			{value: 0},
-			{value: 0},
-			{value: 0},
-			{value: 0},
-			{value: 0}
-		] : analyzer.getLevels(levels);
-	}
+	if (analyzer != null)
+		levels = analyzer.getLevels(levels);
+
+	// SpectralAnalyzer is volume independent now, so handle silence here
+	var silent = FlxG.sound.volume == 0 || FlxG.sound.muted;
 	for (i in 0...visSystem.length)
 	{
 		var vis = visSystem.members[i];
-		var level = levels[i].value;
-		vis.animation.curAnim.curFrame = Math.round(Math.abs((level * 6 * FlxG.sound.music.volume) - 6));
-		vis.visible = level > 0;
+		var animFrame = silent ? 0 : Math.round(levels[i].value * 5);
+		vis.visible = animFrame > 0;
+		animFrame = Math.floor(Math.max(0, Math.min(5, animFrame)));
+		vis.animation.curAnim.curFrame = Math.abs(animFrame - 5);
 	}
 	//	neneAbot.anim.play("idle",true,false, 16 - specHighest(levels) * 16);
 }
@@ -134,12 +128,10 @@ function initAudioSource()
 	var src = FlxG.sound.music != null ? FlxG.sound.music._source : null;
 	if (src == null)
 		return;
+	if (analyzer != null)
+		analyzer.dispose();
+
 	analyzer = new SpectralAnalyzer(src, 7, 0.1, 40);
-	analyzer.minDb = -65;
-	analyzer.maxDb = -25;
-	analyzer.maxFreq = 22000;
-	analyzer.minFreq = 10;
-	analyzer.fftN = 256;
 }
 
 function onBeatHit()
@@ -178,6 +170,12 @@ function applyDarkAbot(character:Character)
 
 function onDestroy()
 {
+	if (analyzer != null)
+	{
+		analyzer.dispose();
+		analyzer = null;
+	}
+
 	FlxG.signals.postUpdate.remove(updateDarkAlpha);
 }
 
