@@ -12,10 +12,9 @@ var scrollingSky;
 var car1, car2, traffic;
 var mist0,mist1,mist2,mist3,mist4,mist5;
 var paper;
-var propDark;
 var canEnabled = false;
 var spraycanAtlas;
-var explodeEz;
+var explodeEZ;
 var explode;
 var casingGroup;
 function onCreate(){
@@ -108,11 +107,6 @@ function onCreate(){
 	var phillyForeground = new BGSprite("stages/phillyStreets/phillyStreets/erect/phillyForeground", 88, 317);
 	insert(members.indexOf(gfGroup),phillyForeground);
 	
-	propDark = new FlxSprite(-500, -1000).makeGraphic(1,1,0xFF000000);
-	propDark.scale.set(5000, 5000);
-	propDark.updateHitbox();
-	propDark.alpha = 0;
-	insert(members.indexOf(gfGroup),propDark);
 	
 	casingGroup = new FlxSpriteGroup(2200, 900);
 	add(casingGroup);
@@ -389,18 +383,10 @@ function finishCanAnimation(name){
 	switch(name){
 		case "start":
 			spraycanAtlas.anim.play("hit");
-			FlxG.sound.play(Paths.sound("phillyStreets/Pico_Bonk"));
 		case "hit":
 			spraycanAtlas.visible = false;
 			explodeEZ.visible = true;
 			explodeEZ.animation.play("idle",true);
-			if ((game.health - 0.7) <= 0) game.boyfriend.idleSuffix = "-explode";
-			game.health -= 0.7;
-			
-			boyfriend.playAnim("hitCan",boyfriend.specialAnim=true);
-			FlxFlicker.flicker(boyfriend, 1, 1 / 30, true, true, function(_) {
-				FlxFlicker.flicker(boyfriend, 0.5, 1 / 60, true, true);
-		});
 		case "shot":
 			spraycanAtlas.visible = false;
 	}
@@ -412,13 +398,51 @@ function onCanFrame(name, frameNumber, frameIndex) {
 	}
 }
 var canShootCan = false;
+var gunTimer;
+var picoFade;
+var hitCanChar;
 function goodNoteHit(note) onNoteHit(game.characterPlayingAsDad ? dad : boyfriend, note);
 function opponentNoteHit(note) onNoteHit(!game.characterPlayingAsDad ? dad : boyfriend, note);
+function onSpawnNote(note) {
+	switch(note.noteType) {
+		case "weekend-1-cockgun":
+			note.missHealth = 0;
+			note.noMissAnimation = true;
+		case "weekend-1-firegun":
+			note.missHealth = 0;
+			note.noMissAnimation = true;
+			note.blockHit = note.mustPress && !canShootCan;
+	}
+}
+function noteMiss(note) {
+	if (note.noteType == "weekend-1-firegun") {
+		setGunCocked(false);
+		takeCanDamage(game.characterPlayingAsDad ? dad : boyfriend);
+	}
+}
+function onUpdatePost(elapsed) {
+	if (hitCanChar == null) return;
+	var curAnim = hitCanChar.anim.curAnim;
+	if (curAnim == null || curAnim.name != "hitCan") hitCanChar = null;
+	else if (curAnim.finished) {
+		var character = hitCanChar;
+		hitCanChar = null;
+		if (game.health > 0) FlxFlicker.flicker(character, 1, 1 / 30, true, true, function(_) {
+			FlxFlicker.flicker(character, 0.5, 1 / 60, true, true);
+		});
+	}
+}
+function setGunCocked(value:Bool) {
+	canShootCan = value;
+	for (note in game.notes.members)
+		if (note != null && note.noteType == "weekend-1-firegun") note.blockHit = note.mustPress && !value;
+}
 function cockGun(character:Character){
 	if (character == null) character = boyfriend;
-	canShootCan = true;
-	new FlxTimer().start(1/24*3,function()addCasing());
-	new FlxTimer().start(1,function()canShootCan=false);
+	setGunCocked(true);
+	if (gunTimer != null) gunTimer.cancel();
+	gunTimer = new FlxTimer().start(1, function(_) setGunCocked(false));
+	new FlxTimer().start(1/24*3,function(_) addCasing());
 	character.playAnim("reload",true);
 	character.specialAnim=true;
 	FlxG.sound.play(Paths.sound("phillyStreets/Gun_Prep"));
@@ -433,10 +457,33 @@ function shootCan(character:Character){
 	if (character == null) character = boyfriend;
 	spraycanAtlas.anim.play("shot",true);
 	FlxG.sound.play(Paths.sound("phillyStreets/shot" + FlxG.random.int(1, 4)));
-	character.playAnim("shoot");
+	character.playAnim("shoot", true);
 	character.specialAnim=true;
-	propDark.alpha = 0.3;
-	FlxTween.tween(propDark, {alpha: 0}, 1.4, {startDelay: 1/24});
+	new FlxTimer().start(1/24, function(_) darkenStage());
+}
+function takeCanDamage(character:Character){
+	character.playAnim("hitCan", true);
+	character.specialAnim = true;
+	hitCanChar = character;
+	FlxG.sound.play(Paths.sound("phillyStreets/Pico_Bonk"));
+	game.health -= 0.5 * game.healthLoss;
+	if (game.health <= 0 && !game.practiceMode) character.idleSuffix = "-explode";
+}
+function darkenStage(){
+	for (member in members) {
+		if (member == null || !Std.isOfType(member, FlxSprite)) continue;
+		if (member == boyfriendGroup || member == dadGroup || member == gfGroup) continue;
+		if (member == spraycanAtlas || member == explode || member == explodeEZ || member == picoFade) continue;
+		if (member.cameras.indexOf(game.camGame) == -1) continue;
+		fadeBackIn(member, member.color);
+		member.color = 0xFF111111;
+	}
+}
+function fadeBackIn(sprite, color){
+	new FlxTimer().start(1/24, function(_) {
+		sprite.color = 0xFF222222;
+		FlxTween.color(sprite, 1.4, 0xFF222222, color);
+	});
 }
 function afterImage(char){
 	var currentFrameGraphic = FlxGraphic.fromBitmapData(char.updateFramePixels(), true, null, false);
@@ -450,20 +497,33 @@ function afterImage(char){
 	FlxTween.tween(fade, {alpha: 0}, 0.4, {onComplete: () -> {
 		remove(fade);
 		fade.destroy();
+		if (picoFade == fade) picoFade = null;
 	}});
-	insert(members.indexOf(dadGroup), fade);
+	picoFade = fade;
+	insert(members.indexOf(boyfriendGroup), fade);
 }
 function addCasing(){
-	var casing = new BGSprite("stages/phillyStreets/PicoBullet",0,0,1,1,["Pop0"]);
-	casing.dance(true);
-	new FlxTimer().start(1/25,function(){
-		FlxFlicker.flicker(casing, 10 * (1/24), 1 / 30, true, true, function() {
-			FlxFlicker.flicker(casing, 10 * (1/24), 1 / 60, false, true, function() {
-				casingGroup.remove(casing);
-			});
-		});
+	var casing = new FlxSprite();
+	casing.frames = Paths.getSparrowAtlas("stages/phillyStreets/PicoBullet");
+	casing.animation.addByPrefix("pop", "Pop0", 24, false);
+	casing.animation.addByPrefix("idle", "Bullet0", 24, true);
+	casing.animation.onFrameChange.add(function(name, frameNumber, frameIndex) {
+		if (name == "pop" && frameNumber == 40) startCasingRoll(casing);
 	});
+	casing.animation.play("pop");
 	casingGroup.add(casing);
+}
+function startCasingRoll(casing){
+	casing.x += casing.frame.offset.x - 1;
+	casing.y += casing.frame.offset.y + 1;
+	casing.angle = 125.1;
+	var randomFactorA = FlxG.random.float(3, 10);
+	var randomFactorB = FlxG.random.float(1, 2);
+	casing.velocity.x = 20 * randomFactorB;
+	casing.drag.x = randomFactorA * randomFactorB;
+	casing.angularVelocity = 100;
+	casing.angularDrag = (casing.drag.x / casing.velocity.x) * 100;
+	casing.animation.play("idle");
 }
 function onNoteHit(character:Character, note:Note){
 	switch(note.noteType) {
@@ -471,17 +531,16 @@ function onNoteHit(character:Character, note:Note){
 			cockGun(character);
 		case "weekend-1-firegun":
 			if (canShootCan) shootCan(character);
-			else character.playAnim("singLEFTmiss",true);
-			canShootCan = false;
+			setGunCocked(false);
 		case "weekend-1-lightcan":
-			character.playAnim("lightcan");
+			character.playAnim("lightcan", true);
 			character.specialAnim=true;
 		case "weekend-1-kickcan":
-			character.playAnim("kickcan");
+			character.playAnim("kickcan", true);
 			character.specialAnim=true;
 			startCan();
 		case "weekend-1-kneecan":
-			character.playAnim("kneecan");
+			character.playAnim("kneecan", true);
 			character.specialAnim=true;
 	}
 }
