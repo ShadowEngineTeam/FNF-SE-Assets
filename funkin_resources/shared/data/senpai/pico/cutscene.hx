@@ -6,7 +6,7 @@ var start = false;
 var seen = !PlayState.seenCutscene;
 function onStartCountdown() {
 	if (!start && seen) {
-		game.callOnScripts("startConversation", ["pico/dialogue"]);
+		game.callOnScripts("startConversationFadeIn", ["pico/dialogue"]);
 		start = true;
 		return Function_Stop;
 	}

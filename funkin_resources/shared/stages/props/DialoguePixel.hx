@@ -1,3 +1,4 @@
+import effects.RetroCameraFade;
 import flixel.addons.text.FlxTypeText;
 import flixel.addons.display.FlxBackdrop;
 import haxe.Json;
@@ -46,6 +47,18 @@ function importBox(name) {
 function startConversation(?dialogueFile:String = "dialogue") {
 	new FlxTimer().start(1, function()startDialogue());
 	loadFile(dialogueFile + (game.isErect ? "-erect" :  ""));
+}
+// Senpai's intro: black, then the game camera fades in before the conversation
+function startConversationFadeIn(?dialogueFile:String = "dialogue") {
+	var black = new FlxSprite(-20, -20).makeGraphic(Std.int(FlxG.width * 1.5), Std.int(FlxG.height * 1.5), FlxColor.BLACK);
+	black.cameras = [camOther];
+	add(black);
+	new FlxTimer().start(0.25, function(_) {
+		remove(black);
+		black.destroy();
+		RetroCameraFade.fadeBlack(game.camGame, 12, 2);
+	});
+	new FlxTimer().start(1.25, function(_) startConversation(dialogueFile));
 }
 function startDialogue() {
 	starting = true;

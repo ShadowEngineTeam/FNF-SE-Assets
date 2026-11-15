@@ -76,7 +76,10 @@ function onStartCountdown() {
 			FlxG.sound.play(Paths.sound("dialogue/roses/angry-appear"));
 			HapticUtil.vibrate(0.1, 0.5, 1, 1);
 		}
-		game.callOnScripts("startConversation");
+		if (songName.toLowerCase() == "senpai")
+			game.callOnScripts("startConversationFadeIn");
+		else
+			game.callOnScripts("startConversation");
 		start = true;
 		return Function_Stop;
 	}
