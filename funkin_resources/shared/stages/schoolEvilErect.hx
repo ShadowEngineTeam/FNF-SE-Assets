@@ -63,7 +63,8 @@ function onStartCountdown() {
 	if (!trandomf && seen && PlayState.isStoryMode){
 		camHUD.visible = false;
 		trandomf = true;
-		var redBG = new FlxSprite().makeGraphic(FlxG.width,FlxG.height,0xFFFF1B31);
+		var redBG = new FlxSprite().makeGraphic(FlxG.width,FlxG.height,0xFFFFFFFF);
+		redBG.color = 0xFFFF1B31;
 		redBG.scrollFactor.set();
 		add(redBG);
 		var senpai = new BGSprite("stages/weeb/senpaiCrazy",0,0,0,0,["Senpai Pre Explosion instance 1"]);
@@ -96,6 +97,7 @@ function onStartCountdown() {
 				new FlxTimer().start(3.2, function() {
 					RetroCameraFade.fadeWhite(FlxG.camera, 8, 1.4);
 					new FlxTimer().start(1.4,function() {
+						redBG.color = 0xFFFFFFFF;
 						FlxG.camera.filters = [];
 						remove(senpai);
 						RetroCameraFade.fadeToBlack(FlxG.camera, 8, 0.8);
