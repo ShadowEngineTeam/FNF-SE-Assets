@@ -46,6 +46,8 @@ function onCreate()
 	pupil.anim.addBySymbolIndices("right", "a bot eyes lookin", CoolUtil.numberArray(32, 17), 24, false);
 
 	FlxG.signals.postUpdate.add(updateDarkAlpha);
+
+	game.startHScriptsNamed("characters/nene-knife");
 }
 
 /*
@@ -98,6 +100,7 @@ function onUpdatePost(elapsed)
 	{
 		i.color = game.gf.color;
 	}
+	synchronizeShader();
 	neneAbot.setPosition(game.gf.x - 110, game.gf.y + 329);
 	neneAbotDark.setPosition(neneAbot.x, neneAbot.y);
 	visSystem.setPosition(neneAbot.x + 207, neneAbot.y + 94);
@@ -121,6 +124,42 @@ function onUpdatePost(elapsed)
 	}
 	//	neneAbot.anim.play("idle",true,false, 16 - specHighest(levels) * 16);
 }
+
+var currentShader = null;
+
+function synchronizeShader()
+{
+	if (currentShader == game.gf.shader)
+		return;
+
+	currentShader = game.gf.shader;
+	for (i in [neneAbot, stereoBG, eyeWhites])
+		i.shader = currentShader;
+	for (i in visSystem.members)
+		i.shader = currentShader;
+}
+
+function moveByNoteKind(kind:String)
+{
+	switch (kind)
+	{
+		case "weekend-1-lightcan":
+			curTarget = 0;
+			pupil.anim.play("left");
+		case "weekend-1-cockgun":
+			curTarget = 1;
+			pupil.anim.play("right");
+	}
+}
+
+function goodNoteHit(note)
+	moveByNoteKind(note.noteType);
+
+function opponentNoteHit(note)
+	moveByNoteKind(note.noteType);
+
+function noteMiss(note)
+	moveByNoteKind(note.noteType);
 
 function initAudioSource()
 {

@@ -141,8 +141,7 @@ function onSongRestart(){
 	if (toggle != 0) onEvent("Philly Glow", "0");
 }
 function onEvent(n, v1){
-	if (n == "Hey!" && v1 == "gf" && startedMoving) {
-		
+	if (n == "Hey!" && v1 == "gf" && startedMoving && !isNene()) {
 		game.gf.playAnim("hairBlow");
 		game.gf.specialAnim = true;
 	}
@@ -161,8 +160,12 @@ function onEvent(n, v1){
 function updateTrainPos() {
 	if (trainSoundTime >= 4700) {
 		startedMoving = true;
-		game.gf.playAnim("hairBlow");
-		game.gf.specialAnim = true;
+		if (isNene())
+			game.callOnHScript("setTrainPassing", [true]);
+		else {
+			game.gf.playAnim("hairBlow");
+			game.gf.specialAnim = true;
+		}
 	}
 	if (startedMoving) {
 		train.x -= 400;
@@ -177,9 +180,13 @@ function updateTrainPos() {
 }
 function trainReset() {
 	train.x = FlxG.width + 200;
-	game.gf.playAnim('hairFall');
-	game.gf.danced = true;
-	game.gf.specialAnim = true;
+	if (isNene())
+		game.callOnHScript("setTrainPassing", [false]);
+	else if (startedMoving) {
+		game.gf.playAnim('hairFall');
+		game.gf.danced = true;
+		game.gf.specialAnim = true;
+	}
 	trainMoving = false;
 	trainCars = 8;
 	trainFinishing = false;
@@ -191,3 +198,6 @@ function onStepHit()
 	if (trainMoving && trainSoundTime >= 4700)
 		HapticUtil.vibrate(0, 0.1, 0.75, 0);
 }
+
+function isNene():Bool
+	return game.gf != null && game.gf.curCharacter == 'nene';

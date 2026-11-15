@@ -24,8 +24,7 @@
 				10,
 				11,
 				12,
-				13,
-				14
+				13
 			]
 		},
 		{
@@ -39,6 +38,7 @@
 			"isFrameLabel": false,
 			"name": "idle0",
 			"indices": [
+				14,
 				15,
 				16,
 				17,
@@ -69,10 +69,25 @@
 		{
 			"loop": false,
 			"offsets": [
-				-126,
+				-12,
 				60
 			],
 			"anim": "idleKnife",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "blink0",
+			"indices": [
+				6,
+				7
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-126,
+				60
+			],
+			"anim": "idleKnifeBlink",
 			"fps": 24,
 			"isFrameLabel": false,
 			"name": "blink0",
@@ -81,7 +96,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		},
 		{

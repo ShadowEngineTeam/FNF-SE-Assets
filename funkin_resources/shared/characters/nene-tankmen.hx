@@ -57,6 +57,8 @@ function onCreate() {
 	comboHeart.shader = adjustColor;
 	comboHeart.visible = false;
 	comboHeart.animation.onFinish.add(function(name) comboHeart.visible = false);
+
+	game.startHScriptsNamed("characters/nene-knife");
 }
 
 function onCreatePost()

@@ -358,15 +358,7 @@ function onEvent(n, v1, v2) {
 				startClear();
 			}
 		case "Sserafim End":
-			//end1
-			game.camOther.bgColor = FlxColor.BLACK;
-			var n = new BGSprite("stages/sserafim/end/end1");
-			n.cameras = [camOther];
-			n.scale.set(0.67, 0.67);
-			n.updateHitbox();
-			n.screenCenter();
-			add(n);
-			FlxG.sound.play(Paths.sound('sserafim/cutscene/end1'));
+			endStuff();
 		case "SetHealthIcon":
 			if (v1 == "bf")
 				if (v2 == "gf") {
@@ -381,6 +373,51 @@ function onEvent(n, v1, v2) {
 		case "Sserafim Flash":
 			FlxG.camera.flash(null,Std.parseFloat(v1));
 	}
+}
+function endStuff() {
+	// The song ends on the last timer instead of when the music does.
+	game.endCallback = function() {};
+
+	var seeYou1 = new BGSprite("stages/sserafim/end/end1");
+	seeYou1.cameras = [camOther];
+	seeYou1.scale.set(0.67, 0.67);
+	seeYou1.updateHitbox();
+	seeYou1.screenCenter();
+	seeYou1.visible = false;
+	add(seeYou1);
+
+	var seeYou2 = new BGSprite("stages/sserafim/end/end2");
+	seeYou2.cameras = [camOther];
+	seeYou2.scale.set(0.67, 0.67);
+	seeYou2.updateHitbox();
+	seeYou2.setPosition(FlxG.width - 40 - seeYou2.width, FlxG.height - 40 - seeYou2.height);
+	seeYou2.visible = false;
+	add(seeYou2);
+
+	FlxG.sound.play(Paths.sound('sserafim/cutscene/end1'));
+
+	new FlxTimer().start(0.05, function(_) {
+		HapticUtil.vibrate(0, 0.2, 0.4, 0);
+		seeYou1.visible = true;
+		game.camOther.bgColor = FlxColor.BLACK;
+		game.camHUD.visible = false;
+		game.canPause = false;
+		game.inCutscene = true;
+	});
+
+	new FlxTimer().start(4, function(_) {
+		seeYou1.visible = false;
+		seeYou2.visible = true;
+		FlxG.sound.play(Paths.sound('sserafim/cutscene/end2'));
+		HapticUtil.vibrate(0, 0.4, 0.5, 0);
+	});
+
+	new FlxTimer().start(8, function(_) {
+		seeYou1.visible = false;
+		seeYou2.visible = false;
+	});
+
+	new FlxTimer().start(9, function(_) game.endSong());
 }
 function getFramesWithKeyword(char, keyword:String) {
 	if (!char.anim.hasAnimateAtlas) {

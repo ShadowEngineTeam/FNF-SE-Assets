@@ -19,7 +19,8 @@ function onCreate()
 	neneAbot.origin.x = Math.round(neneAbot.origin.x);
 	neneAbot.origin.y = Math.round(neneAbot.origin.y);
 	neneAbot.antialiasing = false;
-	neneAbot.animation.addByPrefix('idle', 'danceLeft', 24, false);
+	neneAbot.animation.addByPrefix('danceLeft', 'danceLeft', 24, false);
+	neneAbot.animation.addByPrefix('danceRight', 'danceRight', 24, false);
 	neneAbot.animation.addByPrefix('lower', 'return', 24, false);
 
 	neneAbotSpeaker = new FlxSprite();
@@ -52,6 +53,8 @@ function onCreate()
 		newHs.updateHitbox();
 		visSystem.add(newHs);
 	}
+
+	game.startHScriptsNamed("characters/nene-knife");
 }
 
 var levels = [
@@ -70,7 +73,6 @@ function onSongStart()
 }
 
 var curTarget = 1;
-var state = 0;
 
 function onUpdate(elapsed)
 {
@@ -85,30 +87,6 @@ function onUpdate(elapsed)
 		add = true;
 	}
 
-	var h = game.health;
-	if (h < 0.4 && state == 0)
-	{
-		state = 1;
-		game.gf.playAnim("raiseKnife");
-		game.gf.specialAnim = true;
-	}
-	else if (h >= 0.4 && state == 2)
-	{
-		state = 0;
-		game.gf.playAnim("lowerKnife");
-		game.gf.specialAnim = true;
-	}
-	if (game.gf.anim.curAnim.finished)
-	{
-		if (state == 0)
-			gf.skipDance = false;
-		if (state == 1)
-		{
-			state = 2;
-			game.gf.danced = true;
-			game.gf.skipDance = true;
-		}
-	}
 	if (game.camFollow.x < (game.gf.getMidpoint().x - 30) && curTarget != 0)
 	{
 		curTarget = 0;
@@ -155,20 +133,14 @@ function initAudioSource()
 	analyzer = new SpectralAnalyzer(src, 7, 0.1, 40);
 }
 
-var countdown = FlxG.random.int(3, 7);
-
 function onBeatHit()
 {
-	if (curBeat > countdown && state == 2)
-	{
-		countdown = curBeat + FlxG.random.int(3, 7);
-		game.gf.playAnim("idleKnife");
-	}
-	if (state == 0)
-	{
-		neneAbot.animation.play("idle", true);
-		neneAbotSpeaker.animation.play("idle", true);
-	}
+	if (curBeat % Math.round(game.gfSpeed * game.gf.danceEveryNumBeats) != 0)
+		return;
+
+	neneAbotSpeaker.animation.play("idle", true);
+	if (!game.gf.skipDance)
+		neneAbot.animation.play(game.gf.danced ? "danceRight" : "danceLeft", true);
 }
 
 function applyAbotDropShadowShader()
