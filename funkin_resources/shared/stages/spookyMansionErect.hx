@@ -78,15 +78,19 @@ function onBeatHit(){
 }
 function doLightningStrike(playSound, beat) {
 	if (playSound) {
-		FlxG.sound.play(Paths.sound("spookyMansion/thunder_" + FlxG.random.int(8, 24)));
+		FlxG.sound.play(Paths.sound("spookyMansion/thunder_" + FlxG.random.int(1, 2)));
 	}
 	lightningStrikeBeat = beat;
 	lightningStrikeOffset = FlxG.random.int(8, 24);
 	for (i in lighBG) i.alpha = 1;
-	boyfriend.playAnim("scared");
-	boyfriend.specialAnim = true;
-	gf.playAnim("scared");
-	gf.specialAnim = true;
+	if (boyfriend.animOffsets.exists("scared") && (boyfriend.anim.curAnim == null || boyfriend.anim.curAnim.name != "cheer")) {
+		boyfriend.playAnim("scared", true);
+		boyfriend.specialAnim = true;
+	}
+	if (gf != null && gf.animOffsets.exists("scared")) {
+		gf.playAnim("scared", true);
+		gf.specialAnim = true;
+	}
 	var timer = 0.06 / game.playbackRate;
 	new FlxTimer().start(timer, function() for (i in lighBG) i.alpha = 0);
 	new FlxTimer().start(timer*2, function() 

@@ -119,6 +119,7 @@ function resetBFPole(){
 	boyfriendLight.x = boyfriendPole.x - 180;
 }
 var diedByPole = false;
+var doTweenLimo = false;
 var lambPoleTime = 1000; //47900;
 function onUpdate(){
 	moveLamp();

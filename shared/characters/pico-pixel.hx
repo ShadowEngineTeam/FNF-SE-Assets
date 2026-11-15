@@ -11,7 +11,7 @@ function onCreate()
 function onGameOverStart()
 {
 	var nene:FlxSprite = new FlxSprite(game.gf.x, game.gf.y);
-	nene.frames = Paths.getSparrowAtlas("characters/nenePixel/nenePixelKnifeToss");
+	nene.frames = Paths.getSparrowAtlas("characters/nenePixelKnifeToss");
 	nene.animation.addByPrefix("i", "knifetosscolor", 24, false);
 	nene.animation.play("i");
 	nene.antialiasing = false;

@@ -78,6 +78,7 @@ var toggle = 0;
 var trainCars = 8;
 var trainCooldown = 0;
 var trainSoundTime = 0;
+var startedMoving = false;
 function onUpdatePost(elapsed){
 	if (trainMoving) {
 		trainFrameTiming += elapsed;

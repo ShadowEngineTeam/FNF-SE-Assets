@@ -18,13 +18,17 @@ function onBeatHit(){
 }
 function doLightningStrike(playSound, beat) {
 	if (playSound) {
-		FlxG.sound.play(Paths.sound("spookyMansion/thunder_" + FlxG.random.int(8, 24)));
+		FlxG.sound.play(Paths.sound("spookyMansion/thunder_" + FlxG.random.int(1, 2)));
 	}
 	bg.anim.play("light");
 	lightningStrikeBeat = beat;
 	lightningStrikeOffset = FlxG.random.int(8, 24);
-	boyfriend.playAnim("scared");
-	boyfriend.specialAnim = true;
-	gf.playAnim("scared");
-	gf.specialAnim = true;
+	if (boyfriend.animOffsets.exists("scared") && (boyfriend.anim.curAnim == null || boyfriend.anim.curAnim.name != "cheer")) {
+		boyfriend.playAnim("scared", true);
+		boyfriend.specialAnim = true;
+	}
+	if (gf != null && gf.animOffsets.exists("scared")) {
+		gf.playAnim("scared", true);
+		gf.specialAnim = true;
+	}
 }

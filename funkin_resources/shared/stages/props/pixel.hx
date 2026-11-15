@@ -42,7 +42,7 @@ function updateSplashesScale() {
 		i.scale.set(4, 4);
 	}
 }
-function onEvent(n){
+function onEvent(name){
 	if (name == "Zoom Camera") updateShader();
 }
 function updateShader(){

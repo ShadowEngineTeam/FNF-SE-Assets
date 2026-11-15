@@ -213,8 +213,7 @@ function applyAbotDropShadowShader()
 
 function applyAbotColorAdjustShader()
 {
-	for (i in [neneAbot, pupil, stereoBG])
-		i.shader = game.gf.shader;
+	neneAbot.shader = game.gf.shader;
 }
 
 function onDestroy()

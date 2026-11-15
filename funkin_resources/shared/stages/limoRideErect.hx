@@ -163,7 +163,7 @@ function doShootingStar(beat:Int) {
 	shootingStarBeat = beat;
 	shootingStarOffset = FlxG.random.int(4, 8);
 }
-function onCountdownTick(t) for (i in henchmen) i.animation.play(t % 2 == 0 ? "right" : "left");
+function onCountdownTick(t) for (i in henchmenGroup) i.animation.play(t % 2 == 0 ? "right" : "left");
 var car_can_pass = true;
 function carGoInto300Kilometer(){
 	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)));
@@ -216,7 +216,7 @@ function resetBFPole(){
 }
 var diedByPole = false;
 var lambPoleTime = 1000; //47900;
-function onUpdate(){
+function onUpdate(elapsed){
 	_timer += elapsed;
 	mist1.y = 100 + (Math.sin(_timer) * 200);
 	mist2.y = 0 + (Math.sin(_timer * 0.8) * 100);
