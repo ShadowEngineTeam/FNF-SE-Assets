@@ -11,7 +11,7 @@ function onCreate() {
 	mallWall.updateHitbox();
 	insert(members.indexOf(gfGroup), mallWall);
 	
-	var mallUpperBopper = new BGSprite("stages/christmas/erect/upperBop", -374, -98, 0.28, 0.28, ["upperBop"]);
+	var mallUpperBopper = new BGSprite("stages/christmas/erect/upperBop", -374, -91, 0.28, 0.28, ["upperBop"]);
 	mallUpperBopper.scale.set(0.85, 0.85);
 	mallUpperBopper.updateHitbox();
 	insert(members.indexOf(gfGroup), mallUpperBopper);
@@ -40,19 +40,19 @@ function onCreate() {
 	insert(members.indexOf(gfGroup), mallBottomBopper);
 	
 	
+	var snowFloor = new FlxSprite(-1500, 800).makeGraphic(1,1,0xFFF3F4F5);
+	snowFloor.scale.set(5700, 3000);
+	snowFloor.updateHitbox();
+	insert(members.indexOf(gfGroup), snowFloor);
+
 	var snowLayer = new BGSprite("stages/christmas/fgSnow", -1350, 680);
 	snowLayer.scale.set(1.1, 1);
 	snowLayer.updateHitbox();
 	insert(members.indexOf(gfGroup), snowLayer);
 	
-	var snowFloor = new FlxSprite(-1500, 800).makeGraphic(1,1,0xFFF3F4F5);
-	snowFloor.scale.set(5700, 3000);
-	snowFloor.updateHitbox();
-	insert(members.indexOf(gfGroup), snowFloor);
-	
-	var santa = new BGSprite("stages/christmas/santa", -840, 100, 1, 1, ["santa idle in fear"]);
+	var santa = new BGSprite("stages/christmas/santa", -840, 150, 1, 1, ["santa idle in fear"]);
 	santa.updateHitbox();
-	add(santa);
+	insert(members.indexOf(boyfriendGroup), santa);
 	// for cutscene
 	setVar("satan", santa);
 	bopperShit = () -> {

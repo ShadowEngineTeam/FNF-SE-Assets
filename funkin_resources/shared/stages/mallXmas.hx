@@ -24,17 +24,17 @@ function onCreate() {
 	insert(members.indexOf(gfGroup), mallBottomBopper);
 	
 	
-	var snowLayer = new BGSprite("stages/christmas/fgSnow", -1150, 680);
-	insert(members.indexOf(gfGroup), snowLayer);
-	
 	var snowFloor = new FlxSprite(-1200, 800).makeGraphic(1,1,0xFFF3F4F5);
 	snowFloor.scale.set(5400, 3000);
 	snowFloor.updateHitbox();
 	insert(members.indexOf(gfGroup), snowFloor);
+
+	var snowLayer = new BGSprite("stages/christmas/fgSnow", -1150, 680);
+	insert(members.indexOf(gfGroup), snowLayer);
 	
 	var santa = new BGSprite("stages/christmas/santa", -840, 150, 1, 1, ["santa idle in fear"]);
 	santa.updateHitbox();
-	add(santa);
+	insert(members.indexOf(boyfriendGroup), santa);
 	setVar("satan", santa);
 	bopperShit = () -> {
 		mallBottomBopper.dance(true);

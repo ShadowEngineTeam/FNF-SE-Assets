@@ -1,31 +1,48 @@
 import animate.FlxAnimate;
 var start = false;
 function onEndSong() {
-	if (!game.isErect) return;
+	if (!game.isErect) {
+		if (!PlayState.isStoryMode || start) return;
+		start = true;
+		var blackBG = new FlxSprite(-FlxG.width * FlxG.camera.zoom, -FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
+		blackBG.scrollFactor.set();
+		add(blackBG);
+		camHUD.visible = false;
+		game.inCutscene = true;
+		FlxG.sound.play(Paths.sound("christmas/Lights_Shut_off"), 1, false, null, true, function() game.endCallback());
+		return Function_Stop;
+	}
 	if (start) return;
 	// what a peak
 	
-	var parents = new FlxAnimate(-600, 0);
+	var normalSanta = getVar("satan");
+
+	// Santa clause
+	var santa = new FlxAnimate(-1300, 100);
+	santa.frames = Paths.getTextureAtlas("stages/christmas/santa_speaks_assets");
+	santa.anim.addBySymbol("speak", "santa whole scene", 24, false);
+	santa.anim.play("speak");
+	santa.anim.curAnim.paused = true;
+	santa.visible = false;
+	if (normalSanta != null) {
+		santa.shader = normalSanta.shader;
+		insert(members.indexOf(normalSanta), santa);
+	} else
+		insert(members.indexOf(boyfriendGroup), santa);
+
+	var parents = new FlxAnimate(-602, -3.5);
 	parents.frames = Paths.getTextureAtlas("stages/christmas/parents_shoot_assets");
 	parents.anim.addBySymbol("fuck u", "parents whole scene", 24, false);
 	parents.anim.play("fuck u");
 	parents.anim.curAnim.paused = true;
-	insert(members.indexOf(dadGroup), parents);
+	parents.shader = santa.shader;
+	insert(members.indexOf(santa), parents);
 	parents.visible = false;
-	
-	// Santa clause
-	var santa = new FlxAnimate(-1300, 100);
-	parents.frames = Paths.getTextureAtlas("stages/christmas/santa_speaks_assets");
-	santa.anim.addBySymbol("speak", "santa whole scene", 24, false);
-	santa.anim.play("speak");
-	santa.anim.curAnim.paused = true;
-	insert(members.indexOf(dadGroup) + 1, santa);
-	santa.visible = false;
 	
 	// 1 second head start
 	new FlxTimer().start(1, function() {
 		// who tf nammed this dude
-		if(getVar("satan")!=null)getVar("satan").visible=false;
+		if (normalSanta != null) normalSanta.visible = false;
 		dadGroup.visible = false;
 		santa.anim.curAnim.paused = parents.anim.curAnim.paused = false;
 		santa.visible = parents.visible = true;
