@@ -94,7 +94,12 @@
 			"fps": 24,
 			"isFrameLabel": false,
 			"name": "GF Dancing Beat Hair blowing",
-			"indices": [0, 1, 2, 3]
+			"indices": [
+				0,
+				1,
+				2,
+				3
+			]
 		},
 		{
 			"loop": false,
@@ -177,6 +182,30 @@
 				28,
 				29
 			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-14
+			],
+			"anim": "combo50",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "GF Cheer",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				-17
+			],
+			"anim": "drop70",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "gf sad",
+			"indices": []
 		}
 	],
 	"vocals_file": "gf",

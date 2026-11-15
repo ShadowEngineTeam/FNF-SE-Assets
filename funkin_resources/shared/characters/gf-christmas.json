@@ -76,6 +76,28 @@
 				28,
 				29
 			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				0
+			],
+			"anim": "combo50",
+			"fps": 24,
+			"name": "GF Cheer",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				-21
+			],
+			"anim": "drop70",
+			"fps": 24,
+			"name": "gf sad",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,

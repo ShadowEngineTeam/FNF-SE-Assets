@@ -91,6 +91,30 @@
 				29
 			],
 			"name": "GF Dancing Beat"
+		},
+		{
+			"offsets": [
+				0,
+				-14
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "combo50",
+			"indices": [],
+			"name": "GF Cheer"
+		},
+		{
+			"offsets": [
+				-2,
+				-17
+			],
+			"loop": false,
+			"isFrameLabel": false,
+			"fps": 24,
+			"anim": "drop70",
+			"indices": [],
+			"name": "gf sad"
 		}
 	],
 	"vocals_file": "gf",
