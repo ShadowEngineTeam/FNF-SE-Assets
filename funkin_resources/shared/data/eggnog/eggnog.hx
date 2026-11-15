@@ -1,5 +1,9 @@
 import animate.FlxAnimate;
 var start = false;
+function onCreate() {
+	if (game.isErect)
+		game.startHScriptsNamed("custom_events/Subtitle");
+}
 function onEndSong() {
 	if (!game.isErect) {
 		if (!PlayState.isStoryMode || start) return;
@@ -48,6 +52,10 @@ function onEndSong() {
 		santa.visible = parents.visible = true;
 		//dadGroup.visible = false;
 		FlxG.sound.play(Paths.sound("christmas/santa_emotion"));
+		new FlxTimer().start(0.72, () -> game.triggerEvent("Subtitle", "Wow...", "1.08"));
+		new FlxTimer().start(2.14, () -> game.triggerEvent("Subtitle", "Uh, not even gonna lie to you guys.", "2.7"));
+		new FlxTimer().start(5.54, () -> game.triggerEvent("Subtitle", "That's the most beautiful thing I...", "2.3"));
+		new FlxTimer().start(8.08, () -> game.triggerEvent("Subtitle", "ever heard in my whole life...", "2.22"));
 		game.triggerEvent("Focus Camera", "", "-100, 400, 6.53333334, expoOut");
 		game.triggerEvent("Zoom Camera", "4.66666667, 0.73", "quadinout");
 		new FlxTimer().start(2.8, function() {
