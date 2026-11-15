@@ -1,3 +1,5 @@
+import backend.HapticUtil;
+
 var played = false;
 function onStartCountdown() {
 	if (played || PlayState.seenCutscene) return;
@@ -17,6 +19,7 @@ function onStartCountdown() {
 		FlxG.camera.snapToTarget();
 		FlxG.camera.zoom = 2.5;
 
+		HapticUtil.vibrate(0.1, 0.5, 1, 1);
 		FlxG.sound.play(Paths.sound("christmas/Lights_Turn_On"), 1, false, null, true, function() {
 			camHUD.visible = true;
 			camHUD.alpha = 0;

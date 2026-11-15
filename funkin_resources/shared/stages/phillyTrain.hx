@@ -1,3 +1,4 @@
+import backend.HapticUtil;
 import objects.BGSprite;
 import shaders.AdjustColorShader;
 
@@ -176,4 +177,10 @@ function trainReset() {
 	trainCars = 8;
 	trainFinishing = false;
 	startedMoving = false;
+}
+
+function onStepHit()
+{
+	if (trainMoving && trainSoundTime >= 4700)
+		HapticUtil.vibrate(0, 0.1, 0.75, 0);
 }

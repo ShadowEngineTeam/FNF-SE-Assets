@@ -1,4 +1,6 @@
+import backend.HapticUtil;
 import objects.BGSprite;
+import substates.GameOverSubstate;
 import flixel.addons.display.FlxBackdrop;
 import shaders.AdjustColorShader;
 
@@ -140,20 +142,6 @@ function onCreatePost(){
 	if (!ClientPrefs.data.shaders) return;
 	for(i in[dad,boyfriend,gf])i.shader=colorShader;
 }
-var car_can_pass = true;
-function carGoInto300Kilometer(){
-	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)));
-	car.x = -12600;
-	car.active = true;
-	car.velocity.x = (FlxG.random.int(170, 220) / FlxG.elapsed) * 3;
-	car.y = FlxG.random.int(140, 250);
-	car_can_pass = false;
-	new FlxTimer().start(2, function() {
-		car_can_pass = true;
-		car.velocity.x = 0;
-		car.x = -12600;
-	});
-}
 function doShootingStar(beat:Int) {
 	star.x = FlxG.random.int(50, 900);
 	star.y = FlxG.random.int(-10, 20);
@@ -163,8 +151,8 @@ function doShootingStar(beat:Int) {
 	shootingStarBeat = beat;
 	shootingStarOffset = FlxG.random.int(4, 8);
 }
-function onCountdownTick(t) for (i in henchmenGroup) i.animation.play(t % 2 == 0 ? "right" : "left");
 var car_can_pass = true;
+var doCarHaptics = false;
 function carGoInto300Kilometer(){
 	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)));
 	car.x = -12600;
@@ -172,6 +160,8 @@ function carGoInto300Kilometer(){
 	car.velocity.x = (FlxG.random.int(170, 220) / FlxG.elapsed) * 3;
 	car.y = FlxG.random.int(140, 250);
 	car_can_pass = false;
+	new FlxTimer().start(1, function(_) doCarHaptics = true);
+	new FlxTimer().start(1.4, function(_) doCarHaptics = false);
 	new FlxTimer().start(2, function() {
 		car_can_pass = true;
 		car.velocity.x = 0;
@@ -217,6 +207,8 @@ function resetBFPole(){
 var diedByPole = false;
 var lambPoleTime = 1000; //47900;
 function onUpdate(elapsed){
+	if (doCarHaptics)
+		HapticUtil.vibrate(0, 0.05, 0.25, 0);
 	_timer += elapsed;
 	mist1.y = 100 + (Math.sin(_timer) * 200);
 	mist2.y = 0 + (Math.sin(_timer * 0.8) * 100);
@@ -291,10 +283,11 @@ function onCountdownTick(t) {
 }
 function onGameOverStart(){
 	if (diedByPole){
-		boyfriend.active = true;
-		boyfriend.velocity.x = 2500;
-		boyfriend.angularVelocity = 30;
-		boyfriend.angularAcceleration = 30;
+		var dead = GameOverSubstate.instance.boyfriend;
+		dead.active = true;
+		dead.velocity.x = 2500;
+		dead.angularVelocity = 30;
+		dead.angularAcceleration = 30;
 	}
 }
 function goodNoteHitPre(n){

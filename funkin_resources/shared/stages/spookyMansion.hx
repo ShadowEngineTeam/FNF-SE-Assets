@@ -1,3 +1,4 @@
+import backend.HapticUtil;
 import animate.FlxAnimate;
 var bg;
 function onCreate() {
@@ -30,5 +31,34 @@ function doLightningStrike(playSound, beat) {
 	if (gf != null && gf.animOffsets.exists("scared")) {
 		gf.playAnim("scared", true);
 		gf.specialAnim = true;
+	}
+	triggerLightningHaptics();
+}
+
+var doPostShockHaptics:Bool = false;
+var postShockCounter:Int = 0;
+var counterTargetNum:Int = 10;
+
+function triggerLightningHaptics()
+{
+	HapticUtil.vibrate(0, 0.05, 1, 1);
+
+	doPostShockHaptics = true;
+}
+
+function onStepHit()
+{
+	if (doPostShockHaptics)
+	{
+		postShockCounter++;
+
+		var postShockAmplitude:Float = 0.05 * (counterTargetNum - postShockCounter) * 2.5;
+		HapticUtil.vibrate(0, 0.01, postShockAmplitude, 0);
+
+		if (postShockCounter == counterTargetNum)
+		{
+			doPostShockHaptics = false;
+			postShockCounter = 0;
+		}
 	}
 }

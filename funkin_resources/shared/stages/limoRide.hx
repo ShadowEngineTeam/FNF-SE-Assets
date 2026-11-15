@@ -1,4 +1,6 @@
+import backend.HapticUtil;
 import objects.BGSprite;
+import substates.GameOverSubstate;
 import backend.Funkin;
 
 var car:BGSprite;
@@ -71,6 +73,7 @@ function onCreate(){
 	
 }
 var car_can_pass = true;
+var doCarHaptics = false;
 function carGoInto300Kilometer(){
 	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)));
 	car.x = -12600;
@@ -78,6 +81,8 @@ function carGoInto300Kilometer(){
 	car.velocity.x = (FlxG.random.int(170, 220) / FlxG.elapsed) * 3;
 	car.y = FlxG.random.int(140, 250);
 	car_can_pass = false;
+	new FlxTimer().start(1, function(_) doCarHaptics = true);
+	new FlxTimer().start(1.4, function(_) doCarHaptics = false);
 	new FlxTimer().start(2, function() {
 		car_can_pass = true;
 		car.velocity.x = 0;
@@ -122,6 +127,8 @@ var diedByPole = false;
 var doTweenLimo = false;
 var lambPoleTime = 1000; //47900;
 function onUpdate(){
+	if (doCarHaptics)
+		HapticUtil.vibrate(0, 0.05, 0.25, 0);
 	moveLamp();
 	henchmenGroup.x = bgLimo.x + 300;
 	if (Conductor.songPosition > lambPoleTime){
@@ -191,10 +198,11 @@ function onCountdownTick(t) {
 }
 function onGameOverStart(){
 	if (diedByPole){
-		boyfriend.active = true;
-		boyfriend.velocity.x = 2500;
-		boyfriend.angularVelocity = 30;
-		boyfriend.angularAcceleration = 30;
+		var dead = GameOverSubstate.instance.boyfriend;
+		dead.active = true;
+		dead.velocity.x = 2500;
+		dead.angularVelocity = 30;
+		dead.angularAcceleration = 30;
 	}
 }
 function goodNoteHitPre(n){

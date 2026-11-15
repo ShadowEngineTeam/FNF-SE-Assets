@@ -1,3 +1,4 @@
+import backend.HapticUtil;
 import objects.BGSprite;
 import shaders.RuntimePostEffectShader;
 import flixel.addons.display.FlxBackdrop;
@@ -459,7 +460,10 @@ function shootCan(character:Character){
 	FlxG.sound.play(Paths.sound("phillyStreets/shot" + FlxG.random.int(1, 4)));
 	character.playAnim("shoot", true);
 	character.specialAnim=true;
-	new FlxTimer().start(1/24, function(_) darkenStage());
+	new FlxTimer().start(1/24, function(_) {
+		darkenStage();
+		HapticUtil.vibrate(0.1, 0.1, 1, 1);
+	});
 }
 function takeCanDamage(character:Character){
 	character.playAnim("hitCan", true);
@@ -467,7 +471,15 @@ function takeCanDamage(character:Character){
 	hitCanChar = character;
 	FlxG.sound.play(Paths.sound("phillyStreets/Pico_Bonk"));
 	game.health -= 0.5 * game.healthLoss;
-	if (game.health <= 0 && !game.practiceMode) character.idleSuffix = "-explode";
+	if (game.health <= 0 && !game.practiceMode)
+		character.idleSuffix = "-explode";
+	else
+	{
+		// Can hits Pico.
+		HapticUtil.vibrate(0.1, 0.1, 1, 1);
+		// Can explodes.
+		new FlxTimer().start(0.45, function(_) HapticUtil.vibrate(0.1, 0.1, 1, 1));
+	}
 }
 function darkenStage(){
 	for (member in members) {

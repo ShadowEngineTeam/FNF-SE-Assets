@@ -1,3 +1,4 @@
+import backend.HapticUtil;
 import backend.MusicBeatSubstate;
 import substates.GameOverSubstate;
 
@@ -25,6 +26,19 @@ var signalSound;
 
 function onGameOverStart()
 {
+	var dead = GameOverSubstate.instance.boyfriend;
+	if (dead.curCharacter != "pico-playable")
+		return;
+
+	if (explode)
+	{
+		HapticUtil.vibrate(0, 0.5, 0.5, 1);
+		// Pico falls on his knees.
+		new FlxTimer().start(1.85, function(_) HapticUtil.vibrate(0, 0.1, 0.1, 1));
+	}
+	else
+		dead.animation.onFrameChange.add(onDeathFrame);
+
 	if (boyfriend.idleSuffix == "")
 	{
 		var nene = new FlxSprite(game.gf.x, game.gf.y);
@@ -51,4 +65,15 @@ function onGameOverConfirm()
 {
 	if (signalSound != null)
 		signalSound.stop();
+}
+
+function onDeathFrame(name:String, frameNumber:Int, frameIndex:Int)
+{
+	// Pico falls on his back.
+	if (name == "firstDeath" && frameNumber == 20)
+		HapticUtil.vibrate(0, 0.1, 0.1, 1);
+
+	// Blood firework woohoo!!!!
+	if (name == "deathLoop" && frameNumber % 2 == 0)
+		HapticUtil.vibrate(0, FlxG.random.float(0.1, 0.3), FlxG.random.float(0.1, 0.5), 1);
 }

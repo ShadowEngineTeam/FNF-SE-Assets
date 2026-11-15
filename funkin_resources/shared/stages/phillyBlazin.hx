@@ -1,3 +1,4 @@
+import backend.HapticUtil;
 import objects.BGSprite;
 import shaders.RuntimePostEffectShader;
 import flixel.addons.display.FlxBackdrop;
@@ -104,6 +105,7 @@ function applyLightning(){
 
 	FlxTween.color(gf, 0.3, 0xFF606060, 0xFF888888);
 	FlxG.sound.play(Paths.sound("phillyStreets/Lightning" + FlxG.random.int(1,3)));
+	triggerLightningHaptics();
 }
 // Darnell reacts first, then Pico, like Funkin's darnell-blazin and pico-blazin scripts
 function goodNoteHit(note) noteHit(note);
@@ -399,4 +401,32 @@ function moveToFront() {
 
 	FlxG.state.members[bfPos] = dadGroup;
 	FlxG.state.members[dadPos] = boyfriendGroup;
+}
+
+var doPostShockHaptics:Bool = false;
+var postShockCounter:Int = 0;
+var counterTargetNum:Int = 10;
+
+function triggerLightningHaptics()
+{
+	HapticUtil.vibrate(0, 0.05, 1, 1);
+
+	doPostShockHaptics = true;
+}
+
+function onStepHit()
+{
+	if (doPostShockHaptics)
+	{
+		postShockCounter++;
+
+		var postShockAmplitude:Float = 0.05 * (counterTargetNum - postShockCounter) * 2.5;
+		HapticUtil.vibrate(0, 0.01, postShockAmplitude, 0);
+
+		if (postShockCounter == counterTargetNum)
+		{
+			doPostShockHaptics = false;
+			postShockCounter = 0;
+		}
+	}
 }
