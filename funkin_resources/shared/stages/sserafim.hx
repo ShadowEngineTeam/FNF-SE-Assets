@@ -1,3 +1,4 @@
+import backend.HapticUtil;
 import flixel.addons.effects.FlxSkewedSprite;
 import flixel.math.FlxBasePoint;
 import objects.BGSprite;
@@ -311,6 +312,9 @@ var lightAssets = {
 };
 function onEvent(n, v1, v2) {
 	switch(n) {
+		case "sserafimGuitarVibration":
+			var duration = Std.parseFloat(v1);
+			HapticUtil.increasingVibrate(HapticUtil.MIN_VIBRATION_AMPLITUDE, HapticUtil.MAX_VIBRATION_AMPLITUDE / 2, Math.isNaN(duration) ? 0.55 : duration);
 		case "Focus Camera": game.callOnScripts("updatePerspectiveView");
 		case "Sserafim Sing":
 			baseSinging = v1.split(",");
