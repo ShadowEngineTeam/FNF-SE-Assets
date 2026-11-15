@@ -176,9 +176,9 @@ function applyAbotDropShadowShader()
 	var abotSpeakerShader = new FlxRuntimeShader(Paths.getTextFromFile("shaders/dropshadow.frag"));
 	abotSpeakerShader.setFloatArray("dropColor", [0.321568627, 0.207843137, 0.11372549]);
 	abotSpeakerShader.setFloat("brightness", -66);
-	abotSpeakerShader.setFloat("hue", 10);
+	abotSpeakerShader.setFloat("hue", -10);
 	abotSpeakerShader.setFloat("contrast", 24);
-	abotSpeakerShader.setFloat("saturation", -24);
+	abotSpeakerShader.setFloat("saturation", -23);
 	abotSpeakerShader.setFloat("AA_STAGES", 0);
 	abotSpeakerShader.setFloat("dist", 5);
 	abotSpeakerShader.setFloat("ang", 90 * FlxAngle.TO_RAD);

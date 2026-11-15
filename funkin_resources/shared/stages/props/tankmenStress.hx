@@ -29,11 +29,14 @@ var beenUpdate = false;
 function onUpdate(){
 	if (animationNotes.length > 0) {
 		if (Conductor.songPosition >= animationNotes[0][0]) {
+			var dir:Int = animationNotes[0][1];
+			if (dir == 3) dir -= FlxG.random.int(0, 1);
+			else dir += FlxG.random.int(0, 1);
 			if (gf != null) {
-				gf.playAnim("shoot" + (animationNotes[0][1] + 1), true);
+				gf.playAnim("shoot" + (dir + 1), true);
 				gf.specialAnim = true;
 			}
-			game.callOnScripts("onShooting", [animationNotes[0][1]]);
+			game.callOnScripts("onShooting", [dir]);
 			animationNotes.shift();
 			
 		}
@@ -90,7 +93,7 @@ function createTank(y,data){
 }
 function updateCharacterShader(char){
 	var shader = new FlxRuntimeShader(Paths.getTextFromFile("shaders/dropshadow.frag"));
-	shader.setFloatArray("dropColor", [0.937254902, 1, 0.278431373]);
+	shader.setFloatArray("dropColor", [0.874509804, 0.937254902, 0.235294118]);
 	shader.setFloat("brightness", -46);
 	shader.setFloat("hue", -38);
 	
@@ -99,7 +102,7 @@ function updateCharacterShader(char){
 	shader.setFloat("AA_STAGES", 2);
 	shader.setFloat("dist", 15);
 	shader.setFloat("ang", 135 * FlxAngle.TO_RAD);
-	shader.setFloat("thr", 0.1);
+	shader.setFloat("thr", 0.4);
 	shader.setFloat("thr2", 1);
 	shader.setFloat("str", 1);
 	if (char.isAnimate) char.useRenderTexture = true;

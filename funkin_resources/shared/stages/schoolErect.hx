@@ -99,9 +99,9 @@ function updateCharacterShader(char){
 	
 	shader.setFloatArray("dropColor", [0.321568627, 0.207843137, 0.11372549]);
 	shader.setFloat("brightness", -66);
-	shader.setFloat("hue", 10);
+	shader.setFloat("hue", -10);
 	shader.setFloat("contrast", 24);
-	shader.setFloat("saturation", -24);
+	shader.setFloat("saturation", -23);
 	shader.setFloat("AA_STAGES", 0);
 	shader.setFloat("dist", 5);
 	shader.setFloat("ang", 90 * FlxAngle.TO_RAD);
@@ -121,7 +121,7 @@ function updateCharacterShader(char){
 		case gf:
 			shader.setFloat("brightness", -42);
 			shader.setFloat("hue", -10);
-			shader.setFloat("contrass", 5);
+			shader.setFloat("contrast", 5);
 			shader.setFloat("saturation", -25);
 			shader.setFloat("dist", 3);
 			shader.setFloat("thr", 0.3);

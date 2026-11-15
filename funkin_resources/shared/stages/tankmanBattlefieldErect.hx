@@ -7,6 +7,7 @@ import animate.FlxAnimate;
 
 var sniper;
 var guy;
+var tankmanRim;
 
 function onCreate(){
 	var bg:BGSprite = new BGSprite("stages/tankmanBattlefield/erect/bg", -985, -809);
@@ -44,6 +45,7 @@ function onCreatePost(){
 	}
 }
 function onEvent(n){
+	if (n == "EnableMask" && tankmanRim != null) tankmanRim.setBool("useMask", true);
 	if (n == "Change Character") {
 		for (i in [dad, boyfriend, gf]) {
 			if (ClientPrefs.data.shaders) updateCharacterShader(i);
@@ -60,7 +62,7 @@ function bopDance(){
 function updateCharacterShader(char){
 	var shader = new FlxRuntimeShader(Paths.getTextFromFile("shaders/dropshadow.frag"));
 	
-	shader.setFloatArray("dropColor", [0.937254902, 1, 0.278431373]);
+	shader.setFloatArray("dropColor", [0.874509804, 0.937254902, 0.235294118]);
 	shader.setFloat("brightness", -46);
 	shader.setFloat("hue", -38);
 	
@@ -93,7 +95,8 @@ function updateCharacterShader(char){
 			shader.setFloat("ang", 25 * FlxAngle.TO_RAD);
 			if (char.curCharacter == "tankman-bloody"){
 				shader.setBitmapData("altMask", Paths.image('stages/tankmanBattlefield/erect/masks/tankmanCaptainBloody_mask').bitmap);
-				shader.setBool("useMask", true);
+				shader.setBool("useMask", false);
+				tankmanRim = shader;
 			}
 	}
 }
