@@ -88,7 +88,7 @@ function onUpdatePost(elapsed) {
 	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._source != null)
 		initAudioSource();
 	if (analyzer != null)
-		levels = analyzer.getLevels(levels);
+		levels = analyzer.getLevels();
 
 	// SpectralAnalyzer is volume independent now, so handle silence here
 	var silent = FlxG.sound.volume == 0 || FlxG.sound.muted;
