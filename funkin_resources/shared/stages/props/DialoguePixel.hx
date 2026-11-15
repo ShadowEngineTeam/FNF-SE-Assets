@@ -113,6 +113,7 @@ function loadFile(path) {
 var current = 0;
 var end = false;
 var nextTimer = new FlxTimer();
+var curBox = null;
 function onUpdate() {
 	if (dialogueList != null && starting) {
 		var enter = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
@@ -125,7 +126,10 @@ function onUpdate() {
 		#end
 		if (enter) {
 			if (!nextTimer.finished)nextTimer.cancel();
-			FlxG.sound.play(Paths.sound('weeb/textboxClick'), 0.8);
+			if (curBox != null && curBox.json.clickSound != null)
+				FlxG.sound.play(Paths.sound(curBox.json.clickSound), 0.6);
+			else
+				FlxG.sound.play(Paths.sound('weeb/textboxClick'), 0.8);
 			if (dialogueList.length <= 0) {
 				dialogueList = null;
 				if (hasMusic) FlxG.sound.music.fadeOut(fadeTime.end, 0);
@@ -185,16 +189,23 @@ function nextDialogue() {
 		i.sprite.alpha = 0;
 		i.sprite.anim.onFinish.removeAll();
 		if (i.name == dialogue.box) {
+			curBox = i;
 			i.sprite.alpha = 1;
 			i.sprite.anim.play(dialogue.boxAnimation);
 			updateSpritePositionOffset(i.sprite);
-			updateText(i.json.text);
+			updateText(i.json.text, dialogue.sounds);
 			i.sprite.anim.onFinish.addOnce(function(animName) {
 				if (swagDialogue != null)
 					swagDialogue.start(0.04, true);
 			});
+			i.sprite.anim.onFinish.add(function(animName) {
+				if ((animName == "click" || animName == "angrySenpai") && i.sprite.animOffsets.exists("next"))
+					i.sprite.playAnim("next");
+				else if (animName == "sentenceEnd")
+					i.sprite.playAnim("wait");
+			});
 			swagDialogue.completeCallback = () -> {
-				i.sprite.playAnim("wait");
+				i.sprite.playAnim(i.sprite.animOffsets.exists("sentenceEnd") ? "sentenceEnd" : "wait");
 				dialogueEnd = true;
 			}
 		}
@@ -203,7 +214,7 @@ function nextDialogue() {
 		[current]);
 	current += 1;
 }
-function updateText(file){
+function updateText(file, ?lineSounds:Array<String>){
 	if (file.offsets == null) file.offsets = [0,0];
 	if (file.width == null) file.width = 0;
 	swagDialogue.setPosition(file.offsets[0], file.offsets[1]);
@@ -214,8 +225,9 @@ function updateText(file){
 	swagDialogue.setFormat(font, 32, FlxColor.fromString(file.color != null ? file.color : "#ffffff"), "left", FlxTextBorderStyle.SHADOW, FlxColor.fromString(file.shadowColor != null ? file.shadowColor : "#000000"));
 	swagDialogue.borderSize = file.shadowWidth != null ? file.shadowWidth : 1;
 	var soundList = [];
-	if (file.sounds.length > 0 && file.sounds != null)
-		for(i in file.sounds)
+	var sounds = lineSounds != null ? lineSounds : file.sounds;
+	if (sounds != null)
+		for(i in sounds)
 			soundList.push(FlxG.sound.load(Paths.sound(i)));
 	swagDialogue.sounds = soundList;
 	return;

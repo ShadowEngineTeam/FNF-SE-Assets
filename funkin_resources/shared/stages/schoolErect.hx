@@ -1,3 +1,4 @@
+import backend.HapticUtil;
 import backend.CoolUtil;
 import objects.BGSprite;
 import flixel.addons.display.FlxRuntimeShader;
@@ -63,8 +64,6 @@ function onCreate() {
 
 	switch (songName.toLowerCase()) {
 		case 'roses':
-			FlxG.sound.play(Paths.sound('ANGRY_TEXT_BOX'));
-			bgSky.setGraphicSize(Std.int(bgSky.width * 6));
 			//bgGurl.animation.addByIndices('danceLeft', 'BG fangirls dissuaded', CoolUtil.numberArray(14), "", 24, false);
 			//bgGurl.animation.addByIndices('danceRight', 'BG fangirls dissuaded', CoolUtil.numberArray(30, 15), "", 24, false);
 	}
@@ -76,6 +75,10 @@ var start = false;
 var seen = !PlayState.seenCutscene;
 function onStartCountdown() {
 	if (!start && seen && PlayState.isStoryMode) {
+		if (songName.toLowerCase() == "roses") {
+			FlxG.sound.play(Paths.sound("dialogue/roses/angry-appear"));
+			HapticUtil.vibrate(0.1, 0.5, 1, 1);
+		}
 		game.callOnScripts("startConversation");
 		start = true;
 		return Function_Stop;
