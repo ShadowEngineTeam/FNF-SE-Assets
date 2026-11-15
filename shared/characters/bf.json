@@ -167,6 +167,18 @@
 			"isFrameLabel": false,
 			"name": "BF Dead confirm",
 			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				5,
+				-74
+			],
+			"anim": "fakeoutDeath",
+			"fps": 24,
+			"isFrameLabel": false,
+			"name": "fake out death BF",
+			"indices": []
 		}
 	],
 	"gameover": {
@@ -176,7 +188,8 @@
 	"no_antialiasing": false,
 	"image": [
 		"characters/BOYFRIEND",
-		"characters/BOYFRIEND_DEAD"
+		"characters/BOYFRIEND_DEAD",
+		"characters/BOYFRIEND_FAKEOUT"
 	],
 	"position": [
 		0,
