@@ -13,6 +13,7 @@ var stereoBG:FlxSprite;
 var visSystem:FlxSpriteGroup;
 var eyeWhites:FlxSprite;
 var pupil:FlxAnimate;
+var comboHeart:FlxSprite;
 function onCreate() {
 	neneAbot = new FlxAnimate();
 	neneAbot.frames = Paths.getTextureAtlas("characters/abot/abotSystem");
@@ -49,7 +50,24 @@ function onCreate() {
 	stereoBG.shader = adjustColor;
 	pupil.shader = adjustColor;
 	neneAbot.shader = adjustColor;
-	
+
+	comboHeart = new FlxSprite();
+	comboHeart.frames = Paths.getSparrowAtlas("characters/neneComboHeart");
+	comboHeart.animation.addByPrefix("idle", "hearts aflutter", 24, false);
+	comboHeart.shader = adjustColor;
+	comboHeart.visible = false;
+	comboHeart.animation.onFinish.add(function(name) comboHeart.visible = false);
+}
+
+function onCreatePost()
+{
+	game.gf.animation.onFrameChange.add(function(name, frameNumber, frameIndex) {
+		if (name == "combo50" && frameNumber == 0)
+		{
+			comboHeart.visible = true;
+			comboHeart.animation.play("idle", true);
+		}
+	});
 }
 /*
 -- normal 
@@ -70,6 +88,7 @@ function onUpdatePost(elapsed) {
 		gfGroup.insert(0, stereoBG);
 		gfGroup.insert(0, pupil);
 		gfGroup.insert(0, eyeWhites);
+		gfGroup.add(comboHeart);
 		add = true;
 	}
 	if (game.camFollow.x < (game.gf.getMidpoint().x - 30) && curTarget != 0){
@@ -85,6 +104,7 @@ function onUpdatePost(elapsed) {
 	eyeWhites.setPosition(neneAbot.x + 40, neneAbot.y + 230);
 	pupil.setPosition(neneAbot.x + 50, neneAbot.y + 238);
 	stereoBG.setPosition(neneAbot.x + 150, neneAbot.y + 30);
+	comboHeart.setPosition(game.gf.x + 174.5, game.gf.y - 66);
 	if (analyzer == null && FlxG.sound.music != null && FlxG.sound.music._source != null)
 		initAudioSource();
 	if (analyzer != null)
