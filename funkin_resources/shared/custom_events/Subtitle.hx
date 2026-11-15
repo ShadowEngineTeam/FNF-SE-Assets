@@ -19,7 +19,7 @@ function onCreate()
 
 function onEvent(n:String, v1:String, v2:String)
 {
-	if (n == "Subtitle")
+	if (n == "Subtitle" && ClientPrefs.data.subtitles)
 	{
 		subtileText.text = Std.string(v1);
 		subtileBG.scale.x = subtileText.width + 30;

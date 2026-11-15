@@ -72,7 +72,11 @@ function startDialogue() {
 	game.callOnScripts("onDialogueStart");
 }
 function loadFile(path) {
-	var file = Paths.getTextFromFile("data/" + PlayState.SONG.song + "/" + path + ".json");
+	var file = null;
+	if (!ClientPrefs.data.naughtyness)
+		file = Paths.getTextFromFile("data/" + PlayState.SONG.song + "/" + path + "-censored.json");
+	if (file == null)
+		file = Paths.getTextFromFile("data/" + PlayState.SONG.song + "/" + path + ".json");
 	if (file == null) return;
 	var boxed = [];
 	var character = [];
@@ -208,8 +212,9 @@ function nextDialogue() {
 			updateSpritePositionOffset(i.sprite);
 			updateText(i.json.text, dialogue.sounds);
 			i.sprite.anim.onFinish.addOnce(function(animName) {
+				var speed:Float = dialogue.speed != null ? dialogue.speed : 1;
 				if (swagDialogue != null)
-					swagDialogue.start(0.04, true);
+					swagDialogue.start(speed > 0 ? 0.04 / speed : 0, true);
 			});
 			i.sprite.anim.onFinish.add(function(animName) {
 				if ((animName == "click" || animName == "angrySenpai") && i.sprite.animOffsets.exists("next"))

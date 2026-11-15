@@ -1,0 +1,94 @@
+{
+	"version": "1.0.0",
+	"backdrop": {
+		"type": "solid",
+		"fadeTime": 2.0,
+		"color": "#BFB3DFD8"
+	},
+	"music": {
+		"asset": "",
+		"fadeTime": 0,
+		"looped": false
+	},
+	"outro": {
+		"type": "fade",
+		"fadeTime": 1.0
+	},
+	"dialogue": [
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk-angry",
+			"box": "roses",
+			"boxAnimation": "angrySenpai",
+			"sounds": [
+				"dialogue/roses/angry-click"
+			],
+			"text": [
+				"You disgusting orange boy and your awful way of 'singing'."
+			]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk-angry",
+			"box": "roses",
+			"boxAnimation": "next",
+			"sounds": [
+				"dialogue/roses/angry-click"
+			],
+			"text": [
+				"You'll ruin the neighborhood acting like that."
+			]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk-angry",
+			"box": "roses",
+			"boxAnimation": "next",
+			"sounds": [
+				"dialogue/roses/angry-click"
+			],
+			"text": [
+				"Keep it up and I'll show your girlfriend here a better time tonight than you ever could."
+			]
+		},
+		{
+			"speaker": "pico-pixel",
+			"speakerAnimation": "enter",
+			"box": "roses",
+			"boxAnimation": "next",
+			"text": [
+				"She's not my girlfriend, do whatever you want with her."
+			]
+		},
+		{
+			"speaker": "senpai-pixel",
+			"speakerAnimation": "talk-angry",
+			"box": "roses",
+			"boxAnimation": "next",
+			"sounds": [
+				"dialogue/roses/angry-click"
+			],
+			"text": [
+				"I'll enjoy watching you both cry like dogs once I tell the authorities you brought a fake gun to school!"
+			]
+		},
+		{
+			"speaker": "nene-pixel",
+			"speakerAnimation": "enter",
+			"box": "roses",
+			"boxAnimation": "next",
+			"text": [
+				"Let's kill this guy."
+			]
+		},
+		{
+			"speaker": "pico-pixel",
+			"speakerAnimation": "talk-angry",
+			"box": "roses",
+			"boxAnimation": "next",
+			"text": [
+				"Deal."
+			]
+		}
+	]
+}
