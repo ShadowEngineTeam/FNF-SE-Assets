@@ -5,7 +5,7 @@ var bgGurl;
 var shaderUpdate = [];
 function onCreate() {
 	
-	var backtrees:BGSprite = new BGSprite('stages/weeb/evil/weebBackTrees', -842, -180, 0.5, 0.5);
+	var backtrees:BGSprite = new BGSprite('stages/weeb/evil/weebBackTrees', -842, -80, 0.5, 0.5);
 	insert(members.indexOf(gfGroup), backtrees);
 	backtrees.antialiasing = false;
 
@@ -43,7 +43,7 @@ function onCreate() {
 		shader.setFloat("effectType", 0);
 		shader.setFloat("uSpeed", [1.6, 2, 2, 2][i]);
 		shader.setFloat("uFrequency", [1.6, 4, 4, 4][i]);
-		shader.setFloat("uWaveAmplitude", [0.011, 0.017, 0.01, 0.007][i]);
+		shader.setFloat("uWaveAmplitude", [0.011, 0.017, 0.007, 0.007][i]);
 		shader.setFloat("uTime", 0);
 		shaderUpdate.push(shader);
 		obj.shader = shader;

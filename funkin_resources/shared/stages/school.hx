@@ -30,7 +30,6 @@ function onCreate() {
 	bgTrees.frames = Paths.getPackerAtlas('stages/weeb/weebTrees');
 	bgTrees.animation.add('treeLoop', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 12);
 	bgTrees.animation.play('treeLoop');
-	bgTrees.scrollFactor.set(0.85, 0.85);
 	insert(members.indexOf(gfGroup), bgTrees);
 	bgTrees.antialiasing = false;
 
@@ -46,7 +45,7 @@ function onCreate() {
 	bgGurl.updateHitbox();
 	insert(members.indexOf(gfGroup), bgGurl);
 	bgGurl.antialiasing = false;
-	bgGurl.animation.addByIndices('danceLeft', 'BG girls group', CoolUtil.numberArray(14), "", 24, false);
+	bgGurl.animation.addByIndices('danceLeft', 'BG girls group', CoolUtil.numberArray(15), "", 24, false);
 	bgGurl.animation.addByIndices('danceRight', 'BG girls group', CoolUtil.numberArray(30, 15), "", 24, false);
 	
 	bgSky.setGraphicSize(Std.int(bgSky.width * 6));
@@ -61,7 +60,7 @@ function onCreate() {
 
 	switch (songName.toLowerCase()) {
 		case 'roses':
-			bgGurl.animation.addByIndices('danceLeft', 'BG fangirls dissuaded', CoolUtil.numberArray(14), "", 24, false);
+			bgGurl.animation.addByIndices('danceLeft', 'BG fangirls dissuaded', CoolUtil.numberArray(15), "", 24, false);
 			bgGurl.animation.addByIndices('danceRight', 'BG fangirls dissuaded', CoolUtil.numberArray(30, 15), "", 24, false);
 	}
 	game.startHScriptsNamed("stages/props/DialoguePixel");

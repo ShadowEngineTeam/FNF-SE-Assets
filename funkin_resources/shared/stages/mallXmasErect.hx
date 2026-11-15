@@ -4,7 +4,7 @@ import shaders.AdjustColorShader;
 var bopperShit;
 function onCreate() {
 	var shader = new AdjustColorShader();
-	shader.hue = 5;
+	shader.hue = 15;
 	shader.brightness = 20;
 	var mallWall = new BGSprite("stages/christmas/erect/bgWalls", -726, -566, 0.2, 0.2);
 	mallWall.scale.set(0.8, 0.8);
@@ -60,7 +60,10 @@ function onCreate() {
 		mallUpperBopper.dance(true);
 		santa.dance(true);
 	};
-	santa.shader = shader;
+	var santaShader = new AdjustColorShader();
+	santaShader.hue = 5;
+	santaShader.saturation = 20;
+	santa.shader = santaShader;
 	bopperShit();
 	
 	game.startHScriptsNamed("stages/props/SnowEmitter");
@@ -71,7 +74,7 @@ function onCreatePost(){
 	if (!ClientPrefs.data.shaders) return;
 	for (i in [boyfriend, dad, gf]){
 		var sh = new AdjustColorShader();
-		sh.hue = 15;
+		sh.hue = 5;
 		sh.saturation = 20;
 		i.shader = sh;
 	}

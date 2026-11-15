@@ -1,5 +1,6 @@
 import objects.BGSprite;
 import flixel.math.FlxAngle;
+import flixel.addons.display.FlxBackdrop;
 
 var tankRolling:BGSprite;
 var bopDance:Void;
@@ -15,23 +16,26 @@ function onCreate(){
 	tankSky.updateHitbox();
 	insert(members.indexOf(gfGroup), tankSky);
 	
-	var tankClouds = new BGSprite("stages/tankmanBattlefield/tankClouds", 0,0, 0.4, 0.4);
+	var tankMountains = new BGSprite("stages/tankmanBattlefield/tankMountains", -500, -35, 0.2, 0.2);
+	tankMountains.scale.set(1.2,1.2);
+	tankMountains.updateHitbox();
+	insert(members.indexOf(gfGroup), tankMountains);
+	
+	var tankClouds = new FlxBackdrop(Paths.image("stages/tankmanBattlefield/tankClouds"), 0x01);
+	tankClouds.setPosition(-1100, 20);
+	tankClouds.scrollFactor.set(0.25, 0.25);
+	tankClouds.velocity.x = 8;
 	insert(members.indexOf(gfGroup), tankClouds);
 	
-	var mountains2 = new BGSprite("stages/tankmanBattlefield/mountains2", -500, -35, 0.2, 0.2);
-	mountains2.scale.set(1.2,1.2);
-	mountains2.updateHitbox();
-	insert(members.indexOf(gfGroup), mountains2);
-	
 	var tankBuildings = new BGSprite("stages/tankmanBattlefield/tankBuildings", -260, -35, 0.3, 0.3);
-	tankBuildings.scale.set(1.2,1.2);
+	tankBuildings.scale.set(1.1,1.1);
 	tankBuildings.updateHitbox();
 	insert(members.indexOf(gfGroup), tankBuildings);
 	
-	var cityruins2 = new BGSprite("stages/tankmanBattlefield/cityruins2", -200, 150, 0.35, 0.35);
-	cityruins2.scale.set(1.1,1.1);
-	cityruins2.updateHitbox();
-	insert(members.indexOf(gfGroup), cityruins2);
+	var tankRuins = new BGSprite("stages/tankmanBattlefield/tankRuins", -200, -100, 0.35, 0.35);
+	tankRuins.scale.set(1.1,1.1);
+	tankRuins.updateHitbox();
+	insert(members.indexOf(gfGroup), tankRuins);
 	
 	var smokeLeft = new BGSprite("stages/tankmanBattlefield/smokeLeft", -380,-40, 0.4, 0.4, ["SmokeBlurLeft"], true);
 	insert(members.indexOf(gfGroup), smokeLeft);
@@ -92,18 +96,18 @@ function onCreate(){
 function onBeatHit() bopDance();
 function onCountdownTick() bopDance();
 function onCreatePost(){}
-var tankMoving:Bool = false;
-var tankAngle:Float = FlxG.random.int(-90, 45);
 var tankSpeed:Float = FlxG.random.float(5, 7);
 var tankX:Float = 400;
 function onUpdate() {
 	moveTank();
-	updateShooting();
 }
-function updateShooting(){}
+// The tank follows the song, so it starts over with it.
+function getTankAngle():Float {
+	return Conductor.songPosition / 1000 * tankSpeed;
+}
 function moveTank(){
 	var daAngleOffset:Float = 1;
-	tankAngle += FlxG.elapsed * tankSpeed;
+	var tankAngle:Float = getTankAngle();
 	tankRolling.angle = tankAngle - 90 + 15;
 	tankRolling.x = tankX + Math.cos(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1500;
 	tankRolling.y = 1300 + Math.sin(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1100;

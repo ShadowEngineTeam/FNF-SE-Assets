@@ -10,7 +10,7 @@ var guy;
 var tankmanRim;
 
 function onCreate(){
-	var bg:BGSprite = new BGSprite("stages/tankmanBattlefield/erect/bg", -985, -809);
+	var bg:BGSprite = new BGSprite("stages/tankmanBattlefield/erect/bg", -985, -805);
 	bg.scale.set(1.15, 1.15);
 	bg.updateHitbox();
 	insert(members.indexOf(gfGroup), bg);
@@ -32,7 +32,8 @@ function onCreate(){
 	guy.updateHitbox();
 	insert(members.indexOf(gfGroup), guy);
 	
-	var bricksGround:BGSprite = new BGSprite("stages/tankmanBattlefield/erect/bricksGround", 465, 760);
+	var bricksGround:BGSprite = new BGSprite("stages/tankmanBattlefield/erect/bricksGround", 445, 774);
+	bricksGround.flipX = true;
 	bricksGround.scale.set(1.15, 1.15);
 	bricksGround.updateHitbox();
 	insert(members.indexOf(gfGroup) + 1, bricksGround);
@@ -53,10 +54,16 @@ function onEvent(n){
 	}
 }
 function onBeatHit() bopDance();
+// The sniper can sip on any beat, and nothing cuts the sip short.
 function bopDance(){
+	var sipping:Bool = sniper.anim.curAnim.name == "sip" && !sniper.anim.curAnim.finished;
+	if (FlxG.random.bool(2) && !sipping) {
+		sniper.anim.play("sip", true);
+		sipping = true;
+	}
 	if (curBeat % 2 == 0){
 		guy.anim.play("idle", true);
-		if (sniper.anim.curAnim.name != "sip" || sniper.anim.curAnim.name == "sip" && sniper.anim.curAnim.finished) sniper.anim.play(FlxG.random.bool(2) ? "sip" : "idle", true);
+		if (!sipping) sniper.anim.play("idle", true);
 	}
 }
 function updateCharacterShader(char){

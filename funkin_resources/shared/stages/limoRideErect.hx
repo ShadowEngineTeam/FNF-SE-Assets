@@ -42,7 +42,7 @@ function onCreate(){
 	boyfriendLight = new BGSprite("stages/limo/highwayLight", -750, 150);
 	insert(members.indexOf(gfGroup), boyfriendLight);
 	
-	mist5 = new FlxBackdrop(Paths.image('stages/limo/erect/mistMid'), 0x01);
+	mist5 = new FlxBackdrop(Paths.image('stages/limo/erect/mistFront'), 0x01);
 	mist5.setPosition(-650, -400);
 	mist5.scrollFactor.set(0.2, 0.2);
 	mist5.blend = 0;
@@ -79,7 +79,7 @@ function onCreate(){
 	mist4.scale.set(1.5, 1.5);
 	insert(members.indexOf(gfGroup), mist4);
 	
-	mist3 = new FlxBackdrop(Paths.image('stages/limo/erect/mistMid'), 0x01);
+	mist3 = new FlxBackdrop(Paths.image('stages/limo/erect/mistFront'), 0x01);
 	mist3.setPosition(-650, -100);
 	mist3.scrollFactor.set(0.8, 0.8);
 	mist3.blend = 0;
@@ -101,7 +101,7 @@ function onCreate(){
 		insert(members.indexOf(game.boyfriendGroup) + 1, boyfriendLight);
 	}
 	
-	mist1 = new FlxBackdrop(Paths.image('stages/limo/erect/mistMid'), 0x01);
+	mist1 = new FlxBackdrop(Paths.image('stages/limo/erect/mistFront'), 0x01);
 	mist1.setPosition(-650, -100);
 	mist1.scrollFactor.set(1.1, 1.1);
 	mist1.blend = 0;
@@ -154,7 +154,7 @@ function doShootingStar(beat:Int) {
 var car_can_pass = true;
 var doCarHaptics = false;
 function carGoInto300Kilometer(){
-	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)));
+	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)), 0.7);
 	car.x = -12600;
 	car.active = true;
 	car.velocity.x = (FlxG.random.int(170, 220) / FlxG.elapsed) * 3;

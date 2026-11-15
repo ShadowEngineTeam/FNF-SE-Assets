@@ -58,6 +58,7 @@ function onCreatePost(){
 	boyfriend.color = dad.color = 0xFFDEDEDE;
 	gf.color = 0xFF888888;
 	boyfriend.skipDance = dad.skipDance = true;
+	FlxG.camera.fade(FlxColor.BLACK, 1.5, true, null, true);
 }
 var lightningTimer = 3;
 function onUpdatePost(elap){

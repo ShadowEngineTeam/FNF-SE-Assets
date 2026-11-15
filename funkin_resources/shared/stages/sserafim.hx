@@ -6,6 +6,8 @@ import animate.internal.elements.FlxSpriteElement;
 import flixel.addons.display.FlxRuntimeShader;
 import flixel.addons.display.FlxBackdrop;
 import animate.FlxAnimate;
+import backend.InputFormatter;
+import flixel.text.FlxTextBorderStyle;
 
 var perspectiveFloor;
 var lightSourse = [];
@@ -170,7 +172,8 @@ function onCreatePost(){
 	game.gf.playAnim("intro-static", true);
 	game.gf.specialAnim=boyfriend.specialAnim = true;
 }
-var doCutscene = PlayState.isStoryMode && !PlayState.seenCutscene;
+// The intro plays on the first try in any mode, as in Funkin.
+var doCutscene = !PlayState.seenCutscene && !PlayState.chartingMode;
 var finishedCutscene = false;
 function onStartCountdown(){
 	stageShader.setFloat("hue", 6);
@@ -205,6 +208,7 @@ function onStartCountdown(){
 	return Function_Stop;
 }
 function onUpdatePost(elapsed){
+	checkSkip();
 	updateView(FlxG.camera);
 	game.playerDance();
 }
@@ -583,6 +587,12 @@ function startCutscene(){
 	solid.scrollFactor.set();
 	add(solid);
 	newCam.fade(0xFF000000, 0, false, null, true);
+	cutsceneCam = newCam;
+	cutsceneSprites = [bg, table, burger, cutscene];
+	cutsceneSolid = solid;
+	cutsceneDefaultCams = defaultCam;
+	cutscenePlaying = true;
+	addSkipText();
 
 	for (i in ["hue","saturation","brightness","contrast"]){
 		stageShader.setFloat(i,0);
@@ -593,24 +603,32 @@ function startCutscene(){
 	newCam.zoom = 0.5;
 	game.callOnScripts("updatePerspectiveView");
 	FlxG.sound.load(Paths.sound('sserafim/cutscene/startCutscene'),0.001);
-	new FlxTimer().start(1, function(){
+	cutsceneTimer(1, function(){
 		cutscene.anim.play("l", true);
 		newCam.fade(0xFF000000, 3, true, null, true);
 		FlxTween.tween(newCam.scroll,{y: -60}, 3, {ease: FlxEase.circOut, onUpdate: () -> game.callOnScripts("updatePerspectiveView")});
 		FlxTween.tween(newCam,{zoom: 0.7}, 3, {ease: FlxEase.circOut, onUpdate: () -> game.callOnScripts("updatePerspectiveView")});
-		new FlxTimer().start(time * 20, function(){
-			FlxG.sound.play(Paths.sound('sserafim/cutscene/startCutscene'));
+		cutsceneTimer(time * 20, function(){
+			cutsceneSound = FlxG.sound.play(Paths.sound('sserafim/cutscene/startCutscene'));
 		});
-		new FlxTimer().start(245 * time, function() { seyDadkAmt(0.2, 0.01);
+		cutsceneTimer(245 * time, function() {
+			HapticUtil.vibrate(0, 0.1, 0.2, 0);
+			seyDadkAmt(0.2, 0.01);
 		});
-		new FlxTimer().start(251 * time, function() { seyDadkAmt(0, 0.8);
+		cutsceneTimer(251 * time, function() { seyDadkAmt(0, 0.8);
 		});
-		new FlxTimer().start(406 * time, function() { seyDadkAmt(0.2, 0.01);
+		cutsceneTimer(406 * time, function() {
+			HapticUtil.vibrate(0, 0.1, 0.2, 0);
+			seyDadkAmt(0.2, 0.01);
 		});
-		new FlxTimer().start(411 * time, function() { seyDadkAmt(0, 0.8);
+		cutsceneTimer(411 * time, function() { seyDadkAmt(0, 0.8);
 		});
 		
-		new FlxTimer().start(499 * time, function() {
+		cutsceneTimer(499 * time, function() {
+			// Too late to skip from here, as in Funkin.
+			canSkipCutscene = false;
+			cutsceneSkipped = true;
+			FlxTween.tween(skipText, {alpha: 0}, 0.5, {ease: FlxEase.quadIn});
 			for (i in 0...4){
 				cutscene.shader = characterShader;
 				var value = [0,0,55,-30][i];
@@ -621,7 +639,7 @@ function startCutscene(){
 				});
 			}
 		});
-		new FlxTimer().start(548 * time, function() {
+		cutsceneTimer(548 * time, function() {
 			for (i in 0...4){
 				var value = [10,0,66,-17][i];
 				var vari = ["hue","saturation","brightness","contrast"][i];
@@ -631,11 +649,12 @@ function startCutscene(){
 			}
 		});
 		
-		new FlxTimer().start(563 * time, function(){
+		cutsceneTimer(563 * time, function(){
 			solid.alpha = 1;
 			newCam.fade(0xFFFFFFFF, 30 * time, true, null, true);
 		});
-		new FlxTimer().start(650 * time, function(){
+		cutsceneTimer(650 * time, function(){
+			cutscenePlaying = false;
 			FlxG.camera.zoom = game.defaultCamZoom = 0.7;
 			game.triggerEvent("Zoom Camera", "5.575, 0.55", "circOut");
 			game.startCountdown();
@@ -652,5 +671,80 @@ function startCutscene(){
 			}});
 			perspectiveFloor.loadGraphic(Paths.image('stages/sserafim/floor'));
 		});
+	});
+}
+
+var cutsceneTimers:Array<FlxTimer> = [];
+var cutsceneSound = null;
+var cutsceneCam = null;
+var cutsceneSprites = [];
+var cutsceneSolid = null;
+var cutsceneDefaultCams = null;
+var skipText:FlxText;
+var cutscenePlaying:Bool = false;
+var cutsceneSkipped:Bool = false;
+var canSkipCutscene:Bool = false;
+function cutsceneTimer(time:Float, callback) {
+	var timer = new FlxTimer().start(time, function(_) callback());
+	cutsceneTimers.push(timer);
+	return timer;
+}
+function addSkipText() {
+	skipText = new FlxText(936, 618, 0, 'Skip [ ' + InputFormatter.getKeyName(ClientPrefs.keyBinds.get('accept')[0]) + ' ]', 20);
+	#if FEATURE_MOBILE_CONTROLS
+	skipText.text = 'Skip [ Tap ]';
+	#end
+	skipText.setFormat(Paths.font("vcr.ttf"), 40, FlxColor.WHITE, "right", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+	skipText.x = FlxG.width - 40 - skipText.width;
+	skipText.scrollFactor.set();
+	skipText.borderSize = 2;
+	skipText.alpha = 0;
+	skipText.cameras = [camOther];
+	add(skipText);
+}
+// The first press shows how to skip and the next one skips, as in Funkin.
+function checkSkip() {
+	if (!cutscenePlaying || cutsceneSkipped) return;
+
+	var pressed = controls.ACCEPT;
+	#if FEATURE_MOBILE_CONTROLS
+	for (touch in FlxG.touches.list)
+		if (touch.justPressed) pressed = true;
+	#end
+	if (!pressed) return;
+
+	if (!canSkipCutscene) {
+		FlxTween.tween(skipText, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
+		new FlxTimer().start(0.5, (_) -> canSkipCutscene = true);
+		return;
+	}
+	skipCutscene();
+}
+function skipCutscene() {
+	cutsceneSkipped = true;
+	cutsceneCam.fade(FlxColor.BLACK, 0.5, false, null, true);
+	FlxTween.tween(skipText, {alpha: 0}, 0.5, {ease: FlxEase.quadOut});
+	if (cutsceneSound != null) cutsceneSound.fadeOut(0.5, 0);
+	new FlxTimer().start(0.5, function(_) {
+		if (!cutscenePlaying) return;
+		cutscenePlaying = false;
+		for (timer in cutsceneTimers) timer.cancel();
+		if (cutsceneSound != null) cutsceneSound.stop();
+		FlxTween.cancelTweensOf(cutsceneCam);
+		FlxTween.cancelTweensOf(cutsceneCam.scroll);
+		seyDadkAmt(0, 0.01);
+		for (i in cutsceneSprites) {
+			remove(i);
+			i.destroy();
+		}
+		remove(cutsceneSolid);
+		cutsceneSolid.destroy();
+		perspectiveFloor.cameras = cutsceneDefaultCams;
+		perspectiveFloor.loadGraphic(Paths.image('stages/sserafim/floor'));
+		cutsceneCam.bgColor = 0;
+		cutsceneCam.fade(FlxColor.BLACK, 0.5, true, function() FlxG.cameras.remove(cutsceneCam, true), true);
+		FlxG.camera.zoom = game.defaultCamZoom = 0.7;
+		game.triggerEvent("Zoom Camera", "5.575, 0.55", "circOut");
+		game.startCountdown();
 	});
 }

@@ -75,7 +75,7 @@ function onCreate(){
 var car_can_pass = true;
 var doCarHaptics = false;
 function carGoInto300Kilometer(){
-	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)));
+	FlxG.sound.play(Paths.sound("limo/carPass" + FlxG.random.int(0, 1)), 0.7);
 	car.x = -12600;
 	car.active = true;
 	car.velocity.x = (FlxG.random.int(170, 220) / FlxG.elapsed) * 3;
