@@ -52,8 +52,8 @@
 	"vocals_file": "",
 	"no_antialiasing": true,
 	"image": [
-		"dialoguecharacter/portrait-nene",
-		"dialoguecharacter/portrait-nene-peeved"
+		"dialogueCharacter/portrait-nene",
+		"dialogueCharacter/portrait-nene-peeved"
 	],
 	"position": [300, -65],
 	"scale": 5.4,

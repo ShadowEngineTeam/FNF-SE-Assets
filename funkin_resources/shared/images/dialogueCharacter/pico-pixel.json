@@ -52,8 +52,8 @@
 	"vocals_file": "",
 	"no_antialiasing": true,
 	"image": [
-		"dialoguecharacter/portrait-pico",
-		"dialoguecharacter/portrait-pico-peeved"
+		"dialogueCharacter/portrait-pico",
+		"dialogueCharacter/portrait-pico-peeved"
 	],
 	"position": [320, -75],
 	"scale": 5.4,

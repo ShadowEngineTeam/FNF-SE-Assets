@@ -79,7 +79,7 @@ function onStartCountdown() {
 			else {
 				senpai.alpha = 1;
 				senpai.dance(true);
-				FlxG.sound.play(Paths.sound('weeb/senpai_Dies'),1,false,null,true, function() {
+				FlxG.sound.play(Paths.sound('weeb/Senpai_Dies'),1,false,null,true, function() {
 						remove(redBG);
 						RetroCameraFade.fadeBlack(FlxG.camera, 6, 1.4);
 						new FlxTimer().start(1.4, function(){
