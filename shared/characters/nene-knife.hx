@@ -30,6 +30,12 @@ function setTrainPassing(value:Bool)
 	trainPassing = value;
 }
 
+// Otis loads Nene's scripts for his A-Bot, but has no knife.
+function isNene():Bool
+{
+	return game.gf != null && StringTools.startsWith(game.gf.curCharacter, 'nene');
+}
+
 function isNeneState():Bool
 {
 	return currentState != STATE_DEFAULT;
@@ -47,7 +53,7 @@ function playNeneAnim(name:String)
 function onBeatHit()
 {
 	var gf = game.gf;
-	if (gf == null || curBeat % Math.round(game.gfSpeed * gf.danceEveryNumBeats) != 0)
+	if (!isNene() || curBeat % Math.round(game.gfSpeed * gf.danceEveryNumBeats) != 0)
 		return;
 
 	if (currentState == STATE_PRE_RAISE)
@@ -79,7 +85,7 @@ function onBeatHit()
 function onUpdatePost(elapsed:Float)
 {
 	var gf = game.gf;
-	if (gf == null || gf.isAnimationNull() || game.boyfriend?.curCharacter == 'pico-blazin')
+	if (!isNene() || gf.isAnimationNull() || game.boyfriend?.curCharacter == 'pico-blazin')
 		return;
 
 	pixel = gf.curCharacter == 'nene-pixel';

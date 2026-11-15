@@ -99,6 +99,9 @@ function onCreatePost(){
 	
 }
 //function onBeatHit() bgGurl.animation.play(curBeat % 2 == 0 ? "danceRight" : "danceLeft");
+function onBeatHit() {
+	if (curBeat == 180 && PlayState.isStoryMode && songName.toLowerCase() == "roses") rosesRedFade();
+}
 //function onCountdownTick(t) bgGurl.animation.play(t % 2 == 0 ? "danceRight" : "danceLeft");
 function updateCharacterShader(char){
 	var shader = new FlxRuntimeShader(Paths.getTextFromFile("shaders/dropshadow.frag"));
@@ -149,4 +152,15 @@ function updateCharacterShader(char){
 				shader.setBool("useMask", true);
 			}
 	}
+}
+
+// Roses fades to red on its way to Thorns.
+function rosesRedFade() {
+	var red = new FlxSprite(-20, -20).makeGraphic(Std.int(FlxG.width * 1.5), Std.int(FlxG.height * 1.5), 0xFFFF1B31);
+	red.cameras = [camOther];
+	red.scrollFactor.set();
+	red.alpha = 0;
+	add(red);
+	FlxTween.tween(camHUD, {alpha: 0}, 1.5);
+	FlxTween.tween(red, {alpha: 1}, 2);
 }
