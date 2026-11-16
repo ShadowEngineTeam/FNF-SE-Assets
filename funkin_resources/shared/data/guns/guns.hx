@@ -1,7 +1,7 @@
 var videoStart = false;
 var story = !PlayState.seenCutscene && PlayState.isStoryMode;
 function onStartCountdown() {
-	if (!videoStart & story) {
+	if (!videoStart && story) {
 		game.startVideo("gunsCutscene");
 		videoStart = true;
 		return Function_Stop;

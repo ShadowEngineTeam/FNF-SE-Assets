@@ -2,7 +2,7 @@ var videoStart = false;
 var canPlayVideo = !PlayState.seenCutscene;
 function onStartCountdown() {
 	
-	if (!videoStart & canPlayVideo) {
+	if (!videoStart && canPlayVideo) {
 		game.startVideo("stressPicoCutscene");
 		videoStart = true;
 		return Function_Stop;
