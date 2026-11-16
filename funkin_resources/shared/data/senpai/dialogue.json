@@ -17,14 +17,14 @@
 		{
 			"speaker": "senpai-pixel",
 			"speakerAnimation": "enter",
-			"box": "default",
+			"box": "roses",
 			"boxAnimation": "enter",
 			"text": ["Ah, a new fair maiden has come in search of true love!"]
 		},
 		{
 			"speaker": "senpai-pixel",
 			"speakerAnimation": "talk",
-			"box": "default",
+			"box": "roses",
 			"boxAnimation": "next",
 			"text": [
 				"A serenade between gentlemen shall decide where her beautiful heart shall reside."
@@ -34,7 +34,7 @@
 			"speaker": "bf-pixel",
 			"rightSide": true,
 			"speakerAnimation": "enter",
-			"box": "default",
+			"box": "roses",
 			"boxAnimation": "next",
 
 			"text": ["Beep bo bop"]

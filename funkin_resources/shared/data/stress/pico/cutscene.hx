@@ -33,7 +33,7 @@ function startEndCutscene() {
 	dad.specialAnim = dad.skipDance = true;
 	FlxG.sound.play(Paths.sound("tankmanBattlefield/erect/endCutscene"));
 	new FlxTimer().start(176 / 24, () -> {
-		boyfriend.playAnim('laugh');
+		boyfriend.playAnim('laughEnd');
 		boyfriend.specialAnim = boyfriend.skipDance = true;
 	});
 	new FlxTimer().start(270 / 24, () -> {

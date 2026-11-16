@@ -105,6 +105,30 @@
 		},
 		{
 			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"isFrameLabel": true,
+			"fps": 24,
+			"anim": "laughEnd",
+			"indices": [],
+			"name": "laugh start"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"isFrameLabel": true,
+			"fps": 24,
+			"anim": "laughEnd-loop",
+			"indices": [],
+			"name": "laugh loop"
+		},
+		{
+			"offsets": [
 				620,
 				30
 			],
@@ -138,6 +162,18 @@
 			"anim": "deathConfirm",
 			"indices": [],
 			"name": "confirm"
+		},
+		{
+			"offsets": [
+				620,
+				30
+			],
+			"loop": true,
+			"isFrameLabel": true,
+			"fps": 24,
+			"anim": "deathConfirm-loop",
+			"indices": [],
+			"name": "confirm loop"
 		},
 		{
 			"isFrameLabel": false,

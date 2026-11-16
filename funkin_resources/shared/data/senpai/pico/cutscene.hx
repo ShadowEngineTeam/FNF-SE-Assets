@@ -13,5 +13,9 @@ function onStartCountdown() {
 }
 function onNextDialogue(id){
 	if (id == 1) FlxG.sound.music.pause();
-	if (id == 7) FlxG.sound.music.resume();
+	// Senpai's music starts over when he talks again, as in Funkin.
+	if (id == 7) {
+		FlxG.sound.music.play(true);
+		FlxG.sound.music.fadeIn(2, 0, 1);
+	}
 }
