@@ -45,11 +45,13 @@ function importBox(name) {
 	boxArray.push({name: name, sprite: c,json:json});
 }
 function startConversation(?dialogueFile:String = "dialogue") {
+	if (dialogueFile == null) dialogueFile = "dialogue";
 	new FlxTimer().start(1, function()startDialogue());
 	loadFile(dialogueFile + (game.isErect ? "-erect" :  ""));
 }
 // Senpai's intro: black, then the game camera fades in before the conversation
 function startConversationFadeIn(?dialogueFile:String = "dialogue") {
+	if (dialogueFile == null) dialogueFile = "dialogue";
 	var black = new FlxSprite(-20, -20).makeGraphic(Std.int(FlxG.width * 1.5), Std.int(FlxG.height * 1.5), FlxColor.BLACK);
 	black.cameras = [camOther];
 	add(black);
