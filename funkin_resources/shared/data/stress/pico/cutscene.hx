@@ -1,5 +1,5 @@
 var videoStart = false;
-var canPlayVideo = !PlayState.seenCutscene;
+var canPlayVideo = !PlayState.seenCutscene && !PlayState.chartingMode;
 function onStartCountdown() {
 	
 	if (!videoStart && canPlayVideo) {
