@@ -7,7 +7,6 @@ function onStartCountdown() {
 		videoStart = true;
 		return Function_Stop;
 	}
-	game.startHScriptsNamed("custom_events/Subtitle");
 }
 var endCutsceneStart = false;
 function onEndSong(){
@@ -25,13 +24,14 @@ function startEndCutscene() {
 	game.camZooming = true;
 	game.triggerEvent("Focus Camera", "dad", "320,-70," + getSecond(2) + ",expoOut");
 	game.triggerEvent("Zoom Camera", getSecond(2) + ",0.65","expoOut");
-	new FlxTimer().start(0.56, () -> game.triggerEvent("Subtitle", "Singing that was cool and all but...", "2"));
-	new FlxTimer().start(3.44, () -> game.triggerEvent("Subtitle", "I just wanna let you know that was...", "1.9"));
-	new FlxTimer().start(5.56, () -> game.triggerEvent("Subtitle", "Insanely painful.", "1.34"));
-	new FlxTimer().start(10.44, () -> game.triggerEvent("Subtitle", "Assholes.", "1.14"));
 	dad.playAnim("stressPicoEnding");
 	dad.specialAnim = dad.skipDance = true;
-	FlxG.sound.play(Paths.sound("tankmanBattlefield/erect/endCutscene"));
+	var endSound = FlxG.sound.play(Paths.sound("tankmanBattlefield/erect/endCutscene"));
+	if (game.subtitles != null) {
+		game.subtitles.offsets = [0, 42];
+		game.subtitles.alignment = "bottom";
+		game.subtitles.assignSubtitles("stress/subtitles/end-cutscene-pico", endSound);
+	}
 	new FlxTimer().start(176 / 24, () -> {
 		boyfriend.playAnim('laughEnd');
 		boyfriend.specialAnim = boyfriend.skipDance = true;

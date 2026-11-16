@@ -2,32 +2,12 @@
 	"song": {
 		"events": [
 			[
-				18000,
-				[
-					[
-						"Subtitle",
-						"That's how you do it!",
-						"1.2"
-					]
-				]
-			],
-			[
 				18650,
 				[
 					[
 						"Hey!",
 						"2",
 						""
-					]
-				]
-			],
-			[
-				27600,
-				[
-					[
-						"Subtitle",
-						"That's how you do it!",
-						"1.2"
 					]
 				]
 			],
