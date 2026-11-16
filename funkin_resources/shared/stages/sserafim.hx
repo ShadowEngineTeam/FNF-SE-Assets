@@ -171,6 +171,36 @@ function onCreatePost(){
 	boyfriend.playAnim("intro-static", true);
 	game.gf.playAnim("intro-static", true);
 	game.gf.specialAnim=boyfriend.specialAnim = true;
+
+	for (name in ["yunjin", "kazuha", "chaewon", "eunchae"]) {
+		var icon = new HealthIcon(name, false);
+		icon.visible = false;
+		game.uiGroup.insert(game.uiGroup.members.indexOf(game.iconP2) + 1, icon);
+		groupIcons.push(icon);
+	}
+}
+
+// When the four of them sing, the opponent icon splits into theirs, two up and two down.
+var groupIcons = [];
+var groupIconsShown = false;
+function updateGroupIcons() {
+	var main = game.iconP2;
+	if (groupIconsShown) main.visible = false;
+
+	for (i in 0...groupIcons.length) {
+		var icon = groupIcons[i];
+		icon.visible = groupIconsShown && !ClientPrefs.data.hideHud;
+		if (!icon.visible) continue;
+
+		icon.alpha = main.alpha;
+		icon.scale.set(main.scale.x / 2, main.scale.y / 2);
+		icon.updateHitbox();
+		icon.x = main.x + (i % 2 == 0 ? -37.5 : 37.5) * main.scale.x;
+		icon.y = main.y + (i < 2 ? -37.5 : 37.5) * main.scale.y;
+
+		var frames = icon.animation.curAnim.frames.length;
+		icon.animation.curAnim.curFrame = Std.int(Math.min(main.animation.curAnim.curFrame, frames - 1));
+	}
 }
 // The intro plays on the first try in any mode, as in Funkin.
 var doCutscene = !PlayState.seenCutscene && !PlayState.chartingMode;
@@ -211,6 +241,7 @@ function onUpdatePost(elapsed){
 	checkSkip();
 	updateView(FlxG.camera);
 	game.playerDance();
+	updateGroupIcons();
 }
 var injectedLipFrames = [];
 var injectedLipSprites = [];
@@ -270,7 +301,7 @@ var baseSinging = [false, false, false, false, false];
 var beautiful = false;
 function goodNoteHitPre(note) {
 	for (i in 0...charSing.length) {
-		if (baseSinging[i] != null && (baseSinging[i] == "true" || baseSinging[i] == true)) {
+		if (baseSinging[i] == true) {
 			if (!note.noAnimation) {
 				charSing[i].playAnim(singAnimations[note.noteData], true);
 				if (i == 5 && beautiful) {
@@ -300,7 +331,7 @@ function noteMissPress(n){
 }
 function miss(data) {
 	for (i in 0...charSing.length) {
-		if (baseSinging[i] != null && (baseSinging[i] == "true" || baseSinging[i] == true)) {
+		if (baseSinging[i] == true) {
 			charSing[i].playAnim(singAnimations[data] + "miss", true);
 			if (i == 5 && beautiful) {
 				charSing[i].playAnim(singAnimations[data] + "miss-beautiful", true);
@@ -321,9 +352,13 @@ function onEvent(n, v1, v2) {
 			HapticUtil.increasingVibrate(HapticUtil.MIN_VIBRATION_AMPLITUDE, HapticUtil.MAX_VIBRATION_AMPLITUDE / 2, Math.isNaN(duration) ? 0.55 : duration);
 		case "Focus Camera": game.callOnScripts("updatePerspectiveView");
 		case "Sserafim Sing":
-			baseSinging = v1.split(",");
-			for (i in 0...baseSinging.length)
-				baseSinging[i] = baseSinging[i] == "true";
+			baseSinging = [];
+			for (flag in v1.split(","))
+				baseSinging.push(flag == "true");
+
+			var wasShown = groupIconsShown;
+			groupIconsShown = baseSinging[0] && baseSinging[1] && baseSinging[2] && baseSinging[3];
+			if (wasShown && !groupIconsShown) game.iconP2.visible = !ClientPrefs.data.hideHud;
 		case "Sserafim Show":
 			var baseVisible = v1.split(",");
 			var targetVisible = [charSing[0], charSing[1], charSing[2], charSing[3], charSing[4]];
