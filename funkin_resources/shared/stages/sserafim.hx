@@ -171,45 +171,6 @@ function onCreatePost(){
 	boyfriend.playAnim("intro-static", true);
 	game.gf.playAnim("intro-static", true);
 	game.gf.specialAnim=boyfriend.specialAnim = true;
-
-	addIconGroup(game.iconP2, [0, 1, 2, 3], false, 0.6, [["chaewon", -27, 22], ["eunchae", 27, 22], ["yunjin", -27, -22], ["kazuha", 27, -22]]);
-	addIconGroup(game.iconP1, [4, 5], true, 0.75, [["gf", 20, -14], ["bf", -20, 30]]);
-}
-
-// When everyone on a side sings, its icon splits into theirs, overlapping like the parents' icon.
-// Each icon is [name, x, y] from the middle of the main one, and later ones are drawn on top.
-var iconGroups = [];
-function addIconGroup(main, singers, isPlayer, scale, layout) {
-	var icons = [];
-	for (i in 0...layout.length) {
-		var icon = new HealthIcon(layout[i][0], isPlayer);
-		icon.visible = false;
-		game.uiGroup.insert(game.uiGroup.members.indexOf(main) + 1 + i, icon);
-		icons.push(icon);
-	}
-	iconGroups.push({main: main, icons: icons, singers: singers, scale: scale, layout: layout, shown: false});
-}
-function updateIconGroups() {
-	for (group in iconGroups) {
-		var main = group.main;
-		if (group.shown) main.visible = false;
-
-		for (i in 0...group.icons.length) {
-			var icon = group.icons[i];
-			icon.visible = group.shown && !ClientPrefs.data.hideHud;
-			if (!icon.visible) continue;
-
-			icon.alpha = main.alpha;
-			icon.scale.set(main.scale.x * group.scale, main.scale.y * group.scale);
-			icon.updateHitbox();
-			icon.x = main.x + group.layout[i][1] * main.scale.x;
-			icon.y = main.y + group.layout[i][2] * main.scale.y;
-
-			// Normal, losing and winning faces; an icon without one shows its normal face.
-			var frame = main.animation.curAnim.curFrame;
-			icon.animation.curAnim.curFrame = frame < icon.animation.curAnim.frames.length ? frame : 0;
-		}
-	}
 }
 // The intro plays on the first try in any mode, as in Funkin.
 var doCutscene = !PlayState.seenCutscene && !PlayState.chartingMode;
@@ -250,7 +211,6 @@ function onUpdatePost(elapsed){
 	checkSkip();
 	updateView(FlxG.camera);
 	game.playerDance();
-	updateIconGroups();
 }
 var injectedLipFrames = [];
 var injectedLipSprites = [];
@@ -364,14 +324,6 @@ function onEvent(n, v1, v2) {
 			baseSinging = [];
 			for (flag in v1.split(","))
 				baseSinging.push(flag == "true");
-
-			for (group in iconGroups) {
-				var shown = true;
-				for (i in group.singers)
-					if (baseSinging[i] != true) shown = false;
-				if (group.shown && !shown) group.main.visible = !ClientPrefs.data.hideHud;
-				group.shown = shown;
-			}
 		case "Sserafim Show":
 			var baseVisible = v1.split(",");
 			var targetVisible = [charSing[0], charSing[1], charSing[2], charSing[3], charSing[4]];

@@ -1,0 +1,9 @@
+{
+	"scale": 0.6,
+	"icons": [
+		{"name": "chaewon", "position": [-27, 22]},
+		{"name": "eunchae", "position": [27, 22]},
+		{"name": "yunjin", "position": [-27, -22]},
+		{"name": "kazuha", "position": [27, -22]}
+	]
+}

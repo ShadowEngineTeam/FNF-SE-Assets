@@ -1,0 +1,7 @@
+{
+	"scale": 0.775,
+	"icons": [
+		{"name": "dad", "position": [-30, -16]},
+		{"name": "mom", "position": [24, 16]}
+	]
+}
