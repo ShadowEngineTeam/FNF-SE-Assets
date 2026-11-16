@@ -67,7 +67,7 @@
 		},
 		{
 			"speaker": "pico-pixel",
-			"speakerAnimation": "talk-angry",
+			"speakerAnimation": "talk",
 			"box": "roses",
 			"boxAnimation": "next",
 			"text": ["Deal."]
