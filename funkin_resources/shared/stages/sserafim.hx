@@ -173,7 +173,7 @@ function onCreatePost(){
 	game.gf.specialAnim=boyfriend.specialAnim = true;
 
 	addIconGroup(game.iconP2, [0, 1, 2, 3], false, 0.6, [["chaewon", -27, 22], ["eunchae", 27, 22], ["yunjin", -27, -22], ["kazuha", 27, -22]]);
-	addIconGroup(game.iconP1, [4, 5], true, 0.75, [["gf", 20, -14], ["bf", -20, 14]]);
+	addIconGroup(game.iconP1, [4, 5], true, 0.75, [["gf", 20, -14], ["bf", -20, 30]]);
 }
 
 // When everyone on a side sings, its icon splits into theirs, overlapping like the parents' icon.
