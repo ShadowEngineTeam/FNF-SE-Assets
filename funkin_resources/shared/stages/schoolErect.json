@@ -4,7 +4,6 @@
 
 	"boyfriend": [1175, 300],
 	"girlfriend": [700, 400],
-	"girlfriend_scroll": [1, 1],
 	"opponent": [280, 400],
 	"hide_girlfriend": false,
 	"camera_girlfriend": [240, 340],
