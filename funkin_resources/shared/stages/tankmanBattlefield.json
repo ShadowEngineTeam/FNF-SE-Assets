@@ -2,6 +2,7 @@
 	"defaultZoom": 0.9,
 	"boyfriend": [910, 140],
 	"girlfriend": [360, 70],
+	"girlfriend_scroll": [1, 1],
 	"opponent": [0, 365],
 	"hide_girlfriend": false,
 	"camera_boyfriend": [0,-20],

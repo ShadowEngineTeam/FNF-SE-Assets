@@ -90,6 +90,14 @@ function onUpdatePost(elapsed:Float)
 
 	pixel = gf.curCharacter == 'nene-pixel';
 	var name:String = gf.getAnimationName();
+	// Something else played an animation (a Hey! event, a combo reaction): follow it, so its end
+	// counts like Funkin's onAnimationFinished and the state can pick its animation back up.
+	if (name != lastAnim)
+	{
+		lastAnim = name;
+		lastFrame = -1;
+		wasFinished = false;
+	}
 	if (name == lastAnim)
 	{
 		// Only the frame it gets there, like Funkin's animation callbacks.

@@ -82,10 +82,13 @@ function updateCharacterShader(char){
 	shader.setFloat("thr2", 1);
 	shader.setFloat("str", 1);
 	if (char.isAnimate) char.useRenderTexture = true;
-	char.animation.onFrameChange.add(function(){
+	var updateFrameInfo = function(){
 		shader.setFloatArray("uFrameBounds", [char.frame.uv.left, char.frame.uv.top, char.frame.uv.right, char.frame.uv.bottom]);
 		shader.setFloat("angOffset", char.frame.angle * FlxAngle.TO_RAD);
-	});
+	};
+	// Like Funkin's attachedSprite, the bounds are set right away too
+	updateFrameInfo();
+	char.animation.onFrameChange.add(updateFrameInfo);
 	// I don't want my phone died 
 	char.shader = shader;
 	switch(char){

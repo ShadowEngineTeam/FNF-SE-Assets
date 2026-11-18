@@ -105,8 +105,8 @@
 		},
 		{
 			"offsets": [
-				0,
-				0
+				77,
+				30
 			],
 			"loop": false,
 			"isFrameLabel": true,
@@ -117,8 +117,8 @@
 		},
 		{
 			"offsets": [
-				0,
-				0
+				77,
+				30
 			],
 			"loop": true,
 			"isFrameLabel": true,

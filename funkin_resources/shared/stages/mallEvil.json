@@ -2,6 +2,7 @@
 	"defaultZoom": 1,
 	"boyfriend": [950.5, 85],
 	"girlfriend": [300.5, 75],
+	"girlfriend_scroll": [1, 1],
 	"opponent": [100, 230],
 	"hide_girlfriend": false,
 

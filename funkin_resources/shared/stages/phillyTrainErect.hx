@@ -108,7 +108,7 @@ function onUpdatePost(elapsed){
 	}
 }
 function onBeatHit(){
-	if (curBeat % game.camZoomingFrequency == 0 && toggle == 0) doWinlight();
+	if (curBeat % 4 == 0 && toggle == 0) doWinlight();
 	if (!trainMoving) trainCooldown += 1;
 	if (curBeat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8) {
 		trainCooldown = FlxG.random.int(-4, 0);

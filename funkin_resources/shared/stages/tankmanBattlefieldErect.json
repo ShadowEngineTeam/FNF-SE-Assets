@@ -2,6 +2,7 @@
 	"defaultZoom": 0.7,
 	"boyfriend": [1120.5, 125],
 	"girlfriend": [470.5, 120],
+	"girlfriend_scroll": [1, 1],
 	"opponent": [0, 350],
 	"hide_girlfriend": false,
 	"camera_speed": 1

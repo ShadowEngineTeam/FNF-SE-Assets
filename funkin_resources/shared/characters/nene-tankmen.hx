@@ -101,7 +101,7 @@ function onUpdatePost(elapsed) {
 		curTarget = 1;
 		pupil.anim.play("right");
 	}
-	neneAbot.setPosition(game.gf.x - 80, game.gf.y + 329);
+	neneAbot.setPosition(game.gf.x - 110, game.gf.y + 329);
 	visSystem.setPosition(neneAbot.x + 207, neneAbot.y + 94);
 	eyeWhites.setPosition(neneAbot.x + 40, neneAbot.y + 230);
 	pupil.setPosition(neneAbot.x + 50, neneAbot.y + 238);
