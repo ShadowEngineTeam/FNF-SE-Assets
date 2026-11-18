@@ -102,7 +102,8 @@ function updateCharacterShader(char){
 			shader.setFloat("thr2", 0.4);
 		case dad:
 			shader.setFloat("thr", 0.3);
-			shader.setFloat("ang", 25 * FlxAngle.TO_RAD);
+			// Funkin's Tankman isn't flipped, so the light comes from the other side on a flipped one
+			shader.setFloat("ang", (char.flipX ? 155 : 25) * FlxAngle.TO_RAD);
 			if (char.curCharacter == "tankman-bloody"){
 				shader.setBitmapData("altMask", Paths.image('stages/tankmanBattlefield/erect/masks/tankmanCaptainBloody_mask').bitmap);
 				shader.setBool("useMask", false);
