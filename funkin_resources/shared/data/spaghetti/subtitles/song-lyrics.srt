@@ -1,0 +1,344 @@
+1
+00:00:01,080 --> 00:00:02,450
+*door kicks*
+
+2
+00:00:02,000 --> 00:00:04,200
+Ah s***, scarper, here come the rozzers
+
+3
+00:00:02,490 --> 00:00:04,300
+*door opens with force*
+
+4
+00:00:04,897 --> 00:00:06,510
+<font color="#008c62">{\k35}{\k27}This {\k27}is {\k13}a {\k27}hot {\k32}spot</font>
+
+5
+00:00:06,511 --> 00:00:08,662
+<font color="#008c62">{\k35}{\k13}It's {\k41}your {\k27}go-{\k40}to {\k59}meal</font>
+
+6
+00:00:08,663 --> 00:00:11,084
+<font color="#008c62">{\k35}{\k6}Now {\k7}you're {\k14}a {\k27}reg{\k27}ul{\k6}ar {\k21}and {\k13}fall {\k27}in {\k59}love</font>
+
+7
+00:00:11,085 --> 00:00:13,371
+<font color="#008c62">{\k35}{\k6}Can't {\k7}get {\k14}en{\k13}ough {\k54}of {\k54}that {\k46}taste</font>
+
+8
+00:00:13,372 --> 00:00:15,120
+<font color="#014ea6">{\k35}{\k13}We're {\k27}in {\k27}the {\k14}kit{\k59}chen</font>
+
+9
+00:00:15,121 --> 00:00:17,407
+<font color="#014ea6">{\k35}{\k13}Cook{\k14}in' {\k27}it {\k27}up {\k27}what {\k13}you're {\k27}cra{\k46}ving</font>
+
+10
+00:00:17,408 --> 00:00:19,694
+<font color="#7d4161">{\k35}{\k6}How {\k7}I {\k27}like {\k27}it's {\k27}how {\k14}I'm {\k27}sau{\k59}cin'</font>
+
+11
+00:00:19,695 --> 00:00:22,250
+<font color="#7d4161">{\k35}{\k13}And {\k14}now {\k13}the {\k54}world's {\k54}gone {\k73}mad</font>
+
+12
+00:00:22,251 --> 00:00:24,940
+<font color="#8ea5ab">{\k35}{\k27}You {\k27}don't {\k27}need {\k27}to {\k27}think {\k26}too {\k73}much</font>
+
+13
+00:00:24,941 --> 00:00:28,976
+<font color="#8ea5ab">{\k35}{\k6}Just {\k21}en{\k27}joy, {\k27}sa{\k27}vor, {\k27}rel{\k26}ish {\k27}ev{\k27}er{\k27}y {\k27}last {\k27}bite {\k27}and {\k45}go</font>
+
+14
+00:00:28,977 --> 00:00:30,322
+{\k35}{\k27}(Yeah {\k27}yeah {\k45}yeah)
+
+15
+00:00:30,080 --> 00:00:30,900
+(Ooh)
+
+16
+00:00:30,323 --> 00:00:33,550
+<font color="#e60014">{\k35}{\k54}Comp{\k27}let{\k27}el{\k27}y {\k26}melts {\k27}in {\k27}your {\k73}mouth</font>
+
+17
+00:00:33,551 --> 00:00:38,308
+<font color="#e60014">{\k35}{\k27}Guil{\k27}ty {\k27}plea{\k27}sure {\k27}nev{\k26}er {\k27}killed {\k27}no{\k27}bo{\k27}dy, {\k54}try {\k54}it {\k64}out</font>
+
+18
+00:00:37,880 --> 00:00:39,100
+(Woo)
+
+19
+00:00:38,933 --> 00:00:41,084
+<font color="#7d4161">{\k35}{\k6}Stuck {\k7}be{\k27}tween {\k27}your {\k6}teeth, {\k21}that's {\k14}SPA{\k27}GHET{\k45}TI</font>
+
+20
+00:00:41,085 --> 00:00:43,236
+<font color="#7d4161">{\k35}{\k6}Wan{\k7}na {\k27}get {\k27}it {\k27}out? {\k14}bon {\k27}ap{\k26}pét{\k19}it</font>
+
+21
+00:00:43,237 --> 00:00:45,120
+<font color="#7d4161">{\k35}{\k13}Just {\k27}give {\k27}up, {\k27}you {\k14}know {\k27}you {\k18}will</font>
+
+22
+00:00:45,121 --> 00:00:47,541
+<font color="#8ea5ab">{\k35}{\k13}Eat {\k14}it {\k54}up {\k13}eat {\k14}it {\k13}eat {\k14}it {\k72}up</font>
+
+23
+00:00:47,220 --> 00:00:47,850
+(Woo)
+
+24
+00:00:47,542 --> 00:00:49,694
+<font color="#008c62">{\k35}{\k6}Stuck {\k7}in {\k27}your {\k27}mind, {\k27}that's {\k14}SSER{\k27}AF{\k45}IM</font>
+
+25
+00:00:49,695 --> 00:00:51,846
+<font color="#008c62">{\k35}{\k40}Bad {\k27}dish {\k27}in {\k14}be{\k27}tween {\k26}your {\k19}teeth</font>
+
+26
+00:00:51,847 --> 00:00:53,730
+<font color="#008c62">{\k35}{\k13}Just {\k27}give {\k27}up, {\k27}you {\k14}know {\k27}you {\k18}will</font>
+
+27
+00:00:53,731 --> 00:00:55,613
+<font color="#7d4161">{\k35}{\k13}Eat {\k14}it {\k54}up {\k13}eat {\k14}it {\k13}eat {\k14}it {\k18}up</font>
+
+28
+00:00:55,614 --> 00:00:57,997
+<font color="#e60014">{\k35}{\k40}Eat {\k41}it {\k27}up {\k27}eat {\k26}it {\k27}eat {\k15}it</font>
+
+29
+00:00:57,998 --> 00:00:59,918
+<font color="#e60014">{\k12}{\k40}Eat {\k41}it {\k27}up {\k26}eat {\k27}it {\k19}up</font>
+
+30
+00:00:58,170 --> 00:00:58,900
+(Woah)
+
+31
+00:00:59,919 --> 00:01:02,340
+<font color="#e60014">{\k35}{\k40}Eat {\k41}it {\k27}up {\k27}eat {\k26}it {\k27}eat {\k19}it</font>
+
+32
+00:00:59,950 --> 00:01:00,450
+(Hey!)
+
+33
+00:01:02,341 --> 00:01:04,492
+<font color="#31b0d1">{\k35}{\k13}Eat {\k14}it {\k54}up {\k13}eat {\k14}it {\k13}eat {\k14}it {\k45}up</font>
+
+34
+00:01:04,493 --> 00:01:06,644
+<font color="#31b0d1">{\k35}{\k67}This {\k27}is {\k27}the {\k14}sweet {\k45}spot</font>
+
+35
+00:01:06,645 --> 00:01:08,797
+<font color="#31b0d1">{\k35}{\k13}Heat {\k27}up {\k27}the {\k27}scene, {\k27}it's {\k14}that {\k26}big {\k19}shot</font>
+
+36
+00:01:08,798 --> 00:01:11,030
+<font color="#31b0d1">{\k35}{\k6}Chef's {\k21}choice, {\k40}a {\k26}kick {\k27}spec{\k14}ial{\k26}ly {\k20}for {\k8}you</font>
+
+37
+00:01:11,031 --> 00:01:12,833
+<font color="#31b0d1">{\k0}{\k27}You {\k13}lost {\k14}in {\k27}the {\k13}sauce, {\k27}no {\k27}tur{\k13}nin' {\k19}back</font>
+
+38
+00:01:12,834 --> 00:01:15,216
+<font color="#31b0d1">{\k35}{\k13}Gon{\k14}na {\k13}get {\k14}tip{\k40}sy {\k27}all {\k27}night, {\k13}knock {\k27}it {\k15}back</font>
+
+39
+00:01:15,217 --> 00:01:17,138
+<font color="#31b0d1">{\k12}{\k6}I'll {\k21}take {\k13}that {\k14}emp{\k6}ty {\k7}glass, {\k14}send {\k13}back {\k6}the {\k21}us{\k27}el{\k13}ess {\k19}sass</font>
+
+40
+00:01:17,139 --> 00:01:19,521
+<font color="#31b0d1">{\k35}{\k27}I {\k13}like {\k27}what {\k14}I {\k13}like {\k14}Do {\k13}I {\k14}need {\k13}a {\k13}reas{\k27}on, {\k15}huh?</font>
+
+41
+00:01:19,522 --> 00:01:21,674
+<font color="#31b0d1">{\k25}{\k6}Get {\k21}in{\k14}to {\k27}it, {\k6}ev{\k7}er{\k27}y {\k27}last {\k6}drop, {\k7}down {\k27}the {\k15}hatch</font>
+
+42
+00:01:21,675 --> 00:01:23,826
+<font color="#31b0d1">{\k12}{\k54}Snap {\k13}it {\k27}up {\k54}like {\k13}a {\k27}Get{\k15}ty</font>
+
+43
+00:01:23,827 --> 00:01:26,151
+<font color="#31b0d1">{\k12}{\k27}My {\k27}kimc{\k13}hi {\k14}pose {\k13}is {\k27}end{\k27}less{\k13}ly {\k27}price{\k32}less</font>
+
+44
+00:01:26,152 --> 00:01:28,250
+<font color="#31b0d1">{\k35}{\k13}What{\k14}ev{\k13}er {\k14}I'm {\k27}cook{\k27}in', {\k13}I'm {\k27}like {\k13}a {\k14}star</font>
+
+45
+00:01:28,251 --> 00:01:30,322
+<font color="#31b0d1">{\k0}{\k27}I'll {\k27}cook {\k13}an{\k27}y {\k27}course {\k40}you {\k46}want</font>
+
+46
+00:01:30,323 --> 00:01:32,571
+<font color="#31b0d1">{\k35}{\k13}I'm {\k14}the {\k13}main {\k14}char{\k13}ac{\k27}ter {\k27}in {\k14}your {\k13}kind {\k13}of {\k14}dram{\k15}a</font>
+
+47
+00:01:32,572 --> 00:01:34,627
+<font color="#31b0d1">{\k12}{\k6}Your {\k21}guil{\k13}ty {\k6}plea{\k8}sure, {\k13}your {\k14}high{\k6}-ca{\k21}lo{\k26}rie {\k7}Her{\k6}shey {\k1}choc{\k27}ol{\k19}ate</font>
+
+48
+00:01:34,628 --> 00:01:36,875
+<font color="#31b0d1">{\k35}{\k6}A {\k7}tar{\k14}ot {\k13}that {\k14}shak{\k13}es {\k27}you, {\k27}the {\k14}fla{\k13}vor {\k13}you {\k14}sa{\k15}vor</font>
+
+49
+00:01:36,876 --> 00:01:38,662
+<font color="#31b0d1">{\k12}{\k27}Ok {\k13}now, {\k14}from {\k13}hat{\k14}er {\k27}to {\k26}bel{\k14}iev{\k19}er</font>
+
+50
+00:01:38,663 --> 00:01:39,470
+<font color="#31b0d1">{\k35}{\k46}(Brr)</font>
+
+51
+00:01:39,471 --> 00:01:41,084
+<font color="#014ea6">{\k35}{\k13}Yeah {\k27}this {\k27}is {\k14}a {\k27}hot {\k18}spot</font>
+
+52
+00:01:41,085 --> 00:01:43,371
+<font color="#014ea6">{\k35}{\k27}Don't {\k13}give {\k27}a {\k54}fork {\k14}what {\k13}you {\k46}say</font>
+
+53
+00:01:43,372 --> 00:01:45,792
+<font color="#014ea6">{\k35}{\k13}Try {\k14}a {\k27}bite, {\k27}the {\k27}taste {\k13}is {\k27}stel{\k59}lar</font>
+
+54
+00:01:45,793 --> 00:01:48,079
+<font color="#014ea6">{\k35}{\k13}Don't {\k27}need {\k54}no {\k54}three {\k46}star</font>
+
+55
+00:01:48,080 --> 00:01:49,963
+<font color="#8ea5ab">{\k35}{\k6}Yeah, {\k7}you {\k27}just {\k27}say {\k14}you {\k27}hate {\k45}it</font>
+
+56
+00:01:49,964 --> 00:01:51,981
+<font color="#8ea5ab">{\k35}{\k13}What {\k14}hap{\k13}pen{\k27}ed {\k27}to {\k14}your {\k27}di{\k32}et?</font>
+
+57
+00:01:51,982 --> 00:01:54,402
+<font color="#e60014">{\k35}{\k6}Sneak{\k7}ing {\k14}a {\k27}bite {\k27}when {\k6}no {\k21}on{\k13}e's {\k27}look{\k59}ing</font>
+
+58
+00:01:54,403 --> 00:01:56,958
+<font color="#e60014">{\k35}{\k13}You {\k14}bet{\k13}ter {\k54}stop {\k54}ly{\k73}ing</font>
+
+59
+00:01:56,959 --> 00:01:59,649
+<font color="#008c62">{\k35}{\k27}Don't {\k27}care {\k27}what {\k27}you {\k27}talk {\k26}a{\k73}bout</font>
+
+60
+00:01:59,650 --> 00:02:03,685
+<font color="#008c62">{\k35}{\k27}You're {\k27}the {\k27}one {\k27}com{\k27}in' {\k26}run{\k27}nin' {\k27}back {\k27}here {\k27}ev{\k27}er{\k27}y {\k45}time</font>
+
+61
+00:02:03,686 --> 00:02:05,030
+{\k35}{\k27}(Yeah {\k27}yeah {\k45}yeah)
+
+62
+00:02:04,790 --> 00:02:05,600
+(Ooh)
+
+63
+00:02:05,031 --> 00:02:08,259
+<font color="#8ea5ab">{\k35}{\k54}Comp{\k27}let{\k27}el{\k27}y {\k26}melts {\k27}in {\k27}your {\k73}mouth</font>
+
+64
+00:02:08,260 --> 00:02:13,017
+<font color="#8ea5ab">{\k35}{\k27}Chew {\k27}it {\k27}o{\k54}ver, {\k26}is {\k27}it {\k54}real {\k27}love {\k54}or {\k118}not?</font>
+
+65
+00:02:13,280 --> 00:02:13,950
+(Woo)
+
+66
+00:02:13,641 --> 00:02:15,792
+<font color="#e60014">{\k35}{\k6}Stuck {\k7}be{\k27}tween {\k27}your {\k6}teeth, {\k21}that's {\k14}SPA{\k27}GHET{\k45}TI</font>
+
+67
+00:02:15,793 --> 00:02:17,945
+<font color="#e60014">{\k35}{\k6}Wan{\k7}na {\k27}get {\k27}it {\k27}out? {\k14}bon {\k27}ap{\k26}pét{\k19}it</font>
+
+68
+00:02:17,946 --> 00:02:19,828
+<font color="#e60014">{\k35}{\k13}Just {\k27}give {\k27}up, {\k27}you {\k14}know {\k27}you {\k18}will</font>
+
+69
+00:02:19,829 --> 00:02:22,250
+<font color="#7d4161">{\k35}{\k13}Eat {\k14}it {\k54}up {\k13}eat {\k14}it {\k13}eat {\k14}it {\k72}up</font>
+
+70
+00:02:22,040 --> 00:02:22,650
+(Woo)
+
+71
+00:02:22,251 --> 00:02:24,402
+<font color="#8ea5ab">{\k35}{\k6}Stuck {\k7}in {\k27}your {\k27}mind, {\k27}that's {\k14}SSER{\k27}AF{\k45}IM</font>
+
+72
+00:02:24,403 --> 00:02:26,555
+<font color="#8ea5ab">{\k35}{\k40}Bad {\k27}dish {\k27}in {\k14}be{\k27}tween {\k26}your {\k19}teeth</font>
+
+73
+00:02:26,556 --> 00:02:28,438
+<font color="#8ea5ab">{\k35}{\k13}Just {\k27}give {\k27}up, {\k27}you {\k14}know {\k27}you {\k18}will</font>
+
+74
+00:02:28,439 --> 00:02:30,322
+<font color="#014ea6">{\k35}{\k13}Eat {\k14}it {\k54}up {\k13}eat {\k14}it {\k13}eat {\k14}it {\k18}up</font>
+
+75
+00:02:30,323 --> 00:02:32,705
+<font color="#008c62">{\k35}{\k40}Eat {\k41}it {\k27}up {\k27}eat {\k26}it {\k27}eat {\k15}it</font>
+
+76
+00:02:32,706 --> 00:02:34,627
+<font color="#008c62">{\k12}{\k40}Eat {\k41}it {\k27}up {\k26}eat {\k27}it {\k19}up</font>
+
+77
+00:02:32,880 --> 00:02:33,600
+(Woah)
+
+78
+00:02:34,628 --> 00:02:37,049
+<font color="#008c62">{\k35}{\k40}Eat {\k41}it {\k27}up {\k27}eat {\k26}it {\k27}eat {\k19}it</font>
+
+79
+00:02:34,650 --> 00:02:35,150
+(Hey!)
+
+80
+00:02:37,050 --> 00:02:38,932
+<font color="#e60014">{\k35}{\k13}Eat {\k14}it {\k54}up {\k13}eat {\k14}it {\k13}eat {\k13}it {\k19}up</font>
+
+81
+00:02:38,933 --> 00:02:41,315
+<font color="#7d4161">{\k35}{\k40}Eat {\k41}it {\k27}up {\k27}eat {\k26}it {\k27}eat {\k15}it</font>
+
+82
+00:02:41,316 --> 00:02:43,237
+<font color="#7d4161">{\k12}{\k40}Eat {\k41}it {\k27}up {\k26}eat {\k27}it {\k19}up</font>
+
+83
+00:02:41,490 --> 00:02:42,200
+(Woah)
+
+84
+00:02:43,238 --> 00:02:45,659
+<font color="#7d4161">{\k35}{\k40}Eat {\k41}it {\k27}up {\k27}eat {\k26}it {\k27}eat {\k19}it</font>
+
+85
+00:02:43,260 --> 00:02:43,750
+(Hey!)
+
+86
+00:02:45,660 --> 00:02:48,191
+<font color="#8ea5ab">{\k35}{\k13}Eat {\k14}it {\k54}up {\k13}eat {\k14}it {\k13}eat {\k13}it {\k84}up</font>
+

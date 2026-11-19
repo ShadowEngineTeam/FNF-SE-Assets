@@ -610,6 +610,8 @@ function startCutscene(){
 		FlxTween.tween(newCam,{zoom: 0.7}, 3, {ease: FlxEase.circOut, onUpdate: () -> game.callOnScripts("updatePerspectiveView")});
 		cutsceneTimer(time * 20, function(){
 			cutsceneSound = FlxG.sound.play(Paths.sound('sserafim/cutscene/startCutscene'));
+			if (game.subtitles != null) game.subtitles.assignSubtitles("spaghetti/subtitles/start-cutscene", cutsceneSound);
+			game.callOnScripts("onSpaghettiCutscene", [cutsceneSound]);
 		});
 		cutsceneTimer(245 * time, function() {
 			HapticUtil.vibrate(0, 0.1, 0.2, 0);

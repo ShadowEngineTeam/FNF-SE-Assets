@@ -1,0 +1,32 @@
+﻿1
+00:00:00,000 --> 00:00:01,700
+Hey, check this out!
+
+2
+00:00:02,100 --> 00:00:04,500
+I figured out something neat with my powers recently.
+
+3
+00:00:05,020 --> 00:00:06,700
+With one single tap,
+
+4
+00:00:07,080 --> 00:00:09,000
+I can pretty much learn any language!
+
+5
+00:00:10,180 --> 00:00:11,700
+It's so cool, isn't it?
+
+6
+00:00:12,760 --> 00:00:16,000
+And the best part is, it works on other people too!
+
+7
+00:00:17,000 --> 00:00:18,600
+Oh, really?
+
+8
+00:00:18,800 --> 00:00:22,100
+Turns out, human languages aren't really that complex.
+
